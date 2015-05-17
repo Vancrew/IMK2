@@ -52,11 +52,12 @@
             <span class="glyphicon glyphicon-phone form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="password"placeholder="Password" required/>
+            <input type="password" class="form-control" id="txtNewPassword" name="password" placeholder="Password" required/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            <div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" name="re" class="form-control" placeholder="Retype password" required/>
+            <input type="password" name="re" id="txtConfirmPassword" class="form-control" placeholder="Retype password" required/>
             <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
           </div>
           <div class="row">
@@ -87,6 +88,18 @@
           radioClass: 'iradio_square-blue',
           increaseArea: '20%' // optional
         });
+        $(document).ready(function () {
+           $("#txtConfirmPassword").keyup(checkPasswordMatch);
+        })
+        function checkPasswordMatch() {
+            var password = $("#txtNewPassword").val();
+            var confirmPassword = $("#txtConfirmPassword").val();
+
+            if (password != confirmPassword)
+                $("#divCheckPasswordMatch").html("Passwords do not match!");
+            else
+                $("#divCheckPasswordMatch").html("Passwords match.");
+        }
       });
     </script>
   </body>
