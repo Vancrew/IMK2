@@ -60,7 +60,7 @@
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Nomor KTP</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nomor KTP Anda">
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nomor KTP Anda" required>
                     </div>
 
                     <div class="form-group">
@@ -161,7 +161,7 @@
                     <div class="row">
                       <div class="col-xs-9"></div>
                       <div class="col-xs-3">
-                        <button type="submit" class="btn btn-primary">Submit</button>  
+                        <button type="submit" class="btn btn-primary">Pinjam</button>  
                       </div>
                     </div>
 
@@ -288,7 +288,7 @@
           })
 
         })
-      
+
     </script>
 
     <!-- InputMask -->
