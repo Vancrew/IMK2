@@ -34,26 +34,29 @@ class Anggota extends CI_Controller {
 		$this->load->view('anggota/pendaftaran');
 		// $this->load->view('template/footer');
 	}
-	public function registrasi()
+	public function pendaftaran()
 	{
+		$this->load->view('anggota/pendaftaran');
 
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_pendaftaran');
-		$this->load->view('template/footer');
+		// $this->load->view('template/header_petugas');
+		// $this->load->view('petugas/petugas_pendaftaran');
+		// $this->load->view('template/footer');
 	}
-	public function pembayaran()
+	public function masuk()
 	{
+		$this->load->view('anggota/masuk');
 
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_pembayaran');
-		$this->load->view('template/footer');
+		// $this->load->view('template/header_petugas');
+		// $this->load->view('petugas/petugas_pembayaran');
+		// $this->load->view('template/footer');
 	}
-	public function pembayaran2()
+	public function riwayat()
 	{
+		$this->load->view('anggota/riwayat');
 
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_pembayaran2');
-		$this->load->view('template/footer');
+		// $this->load->view('template/header_petugas');
+		// $this->load->view('petugas/petugas_pembayaran2');
+		// $this->load->view('template/footer');
 	}
 	public function pembatalan()
 	{

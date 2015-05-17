@@ -29,48 +29,31 @@
       </div>
 
       <div class="register-box-body">
-        <p class="login-box-msg">Pendaftaran Anggota Baru</p>
-        <form action="<?php echo base_url(); ?>index.php/anggota/masuk" method="post" onSubmit="return cek()">
-          <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Nama Lengkap" required/>
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
-          </div>
-           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Nomor KTP" required/>
-            <span class="glyphicon glyphicon-credit-card form-control-feedback"></span>
-          </div>
-           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Alamat" required/>
-            <span class="glyphicon glyphicon-home form-control-feedback"></span>
-          </div>
+        <p class="login-box-msg">Masuk ke Sistem Informasi </p>
+        <form action="<?php echo base_url(); ?>index.php/anggota/riwayat" method="post" onSubmit="return cek()">
+
           <div class="form-group has-feedback">
             <input type="email" class="form-control" placeholder="Email" required/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
-           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Nomor Telepon" required/>
-            <span class="glyphicon glyphicon-phone form-control-feedback"></span>
-          </div>
+           
           <div class="form-group has-feedback">
             <input type="password" name="pas" class="form-control" placeholder="Password" required/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
-          <div class="form-group has-feedback">
-            <input type="password" name="re" class="form-control" placeholder="Retype password" required/>
-            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-          </div>
+          
           <div class="row">
             <div class="col-xs-8">    
                                     
             </div><!-- /.col -->
             <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Daftar</button>
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
             </div><!-- /.col -->
           </div>
         </form>        
 
 
-        <a href="masuk" class="text-center">Sudah Punya Akun?</a>
+        <a href="pendaftaran" class="text-center">Belum Punya Akun?</a>
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
 
