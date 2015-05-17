@@ -159,7 +159,7 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-xs-9"></div>
+                      <div class="col-xs-9"> <a href="pendaftaran" class="text-center">Pengguna Belum terdaftar?</a></div>
                       <div class="col-xs-3">
                         <button type="submit" class="btn btn-primary">Pinjam</button>  
                       </div>

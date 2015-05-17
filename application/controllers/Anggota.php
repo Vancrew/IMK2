@@ -30,10 +30,7 @@ class Anggota extends CI_Controller {
 	}
 	public function index()
 	{
-
-		// $this->load->view('template/header_petugas');
 		$this->load->view('anggota/pendaftaran');
-		// $this->load->view('template/footer');
 	}
 	public function pendaftaran()
 	{
@@ -59,10 +56,6 @@ class Anggota extends CI_Controller {
 	public function masuk()
 	{
 		$this->load->view('anggota/masuk');
-
-		// $this->load->view('template/header_petugas');
-		// $this->load->view('petugas/petugas_pembayaran');
-		// $this->load->view('template/footer');
 	}
 	public function cek_login()
 	{
@@ -97,55 +90,5 @@ class Anggota extends CI_Controller {
 		{
 			redirect('/anggota/masuk');
 		}
-		
-		// $this->load->view('template/header_petugas');
-		// $this->load->view('petugas/petugas_pembayaran2');
-		// $this->load->view('template/footer');
-	}
-	public function pembatalan()
-	{
-
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_pembatalan');
-		$this->load->view('template/footer');
-	}
-	public function pembatalan2()
-	{
-
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_pembatalan2');
-		$this->load->view('template/footer');
-	}
-	public function peminjaman()
-	{
-
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_peminjaman');
-		$this->load->view('template/footer');
-	}
-	public function peminjaman2()
-	{
-
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_peminjaman2');
-		$this->load->view('template/footer');
-	}
-	public function pengembalian()
-	{
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_pengembalian');
-		$this->load->view('template/footer');
-	}
-	public function pengembalian2()
-	{
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_pengembalian2');
-		$this->load->view('template/footer');
-	}
-	public function pengembalian3()
-	{
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_pengembalian3');
-		$this->load->view('template/footer');
 	}
 }

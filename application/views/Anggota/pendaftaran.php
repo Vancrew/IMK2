@@ -24,9 +24,7 @@
   </head>
   <body class="register-page">
     <div class="register-box">
-      <div class="register-logo">
-        <a href="<?php echo base_url(); ?>assets/index2.html"><b>SI</b>SEPEDA</a>
-      </div>
+  
 
       <div class="register-box-body">
         <p class="login-box-msg">Pendaftaran Anggota Baru</p>
