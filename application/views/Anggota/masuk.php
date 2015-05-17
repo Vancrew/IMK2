@@ -30,15 +30,15 @@
 
       <div class="register-box-body">
         <p class="login-box-msg">Masuk ke Sistem Informasi </p>
-        <form action="<?php echo base_url(); ?>index.php/anggota/riwayat" method="post" onSubmit="return cek()">
+        <form action="<?php echo base_url(); ?>index.php/anggota/cek_login" method="post" onSubmit="return cek()">
 
           <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email" required/>
+            <input type="email" class="form-control" name="email" placeholder="Email" required/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
            
           <div class="form-group has-feedback">
-            <input type="password" name="pas" class="form-control" placeholder="Password" required/>
+            <input type="password" name="password" class="form-control" placeholder="Password" required/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           

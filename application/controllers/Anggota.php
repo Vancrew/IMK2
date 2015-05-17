@@ -24,6 +24,7 @@ class Anggota extends CI_Controller {
 		$this->load->helper('url');
 
         $this->load->library('session');
+        $this->load->model('anggota_model');
 
 		
 	}
@@ -42,6 +43,19 @@ class Anggota extends CI_Controller {
 		// $this->load->view('petugas/petugas_pendaftaran');
 		// $this->load->view('template/footer');
 	}
+	public function daftar()
+	{
+		$nama=$_POST['nama'];
+		$noktp=$_POST['noktp'];
+		$alamat=$_POST['alamat'];
+		$email=$_POST['email'];
+		$telp=$_POST['telp'];
+		$password=$_POST['password'];
+		$retval=$this->anggota_model->insert_entry($nama,$noktp,$alamat,$email,$telp,$password);
+		if($retval){
+			echo "sukses";
+		}
+	}
 	public function masuk()
 	{
 		$this->load->view('anggota/masuk');
@@ -50,10 +64,40 @@ class Anggota extends CI_Controller {
 		// $this->load->view('petugas/petugas_pembayaran');
 		// $this->load->view('template/footer');
 	}
+	public function cek_login()
+	{
+		$email=$_POST['email'];
+		$password=$_POST['password'];
+		$result=$this->anggota_model->login($email,$password);
+		if($result->num_rows()){
+			$array = array(
+                   'email'  => $email,
+                   'logged_in' => TRUE
+               );
+			$this->session->set_userdata($array);
+			redirect('/anggota/riwayat');
+		}
+		else
+		{
+			echo "login gagal";
+		}
+		
+	}
+	public function log_out(){
+		$this->session->sess_destroy();
+		redirect('/anggota/masuk');
+	}
 	public function riwayat()
 	{
-		$this->load->view('anggota/riwayat');
-
+		
+		if($this->session->userdata('logged_in')){
+			$this->load->view('anggota/riwayat');	
+		}
+		else
+		{
+			redirect('/anggota/masuk');
+		}
+		
 		// $this->load->view('template/header_petugas');
 		// $this->load->view('petugas/petugas_pembayaran2');
 		// $this->load->view('template/footer');
