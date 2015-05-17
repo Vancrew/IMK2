@@ -29,10 +29,12 @@ class Petugas extends CI_Controller {
 	}
 	public function index()
 	{
+		$this->load->view('petugas/peminjaman');
 
-		$this->load->view('template/header_petugas');
-		$this->load->view('petugas/petugas_pembayaran');
-		$this->load->view('template/footer');
+	// 	$this->load->view('template/header_petugas');
+	// 	$this->load->view('petugas/petugas_pembayaran');
+	// 	$this->load->view('template/footer');
+	// 
 	}
 	public function registrasi()
 	{

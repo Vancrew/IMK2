@@ -52,7 +52,7 @@
             <span class="glyphicon glyphicon-phone form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" name="pas" class="form-control" name="password"placeholder="Password" required/>
+            <input type="password" class="form-control" name="password"placeholder="Password" required/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
