@@ -23,39 +23,195 @@
     <![endif]-->
   </head>
   <body class="register-page">
-    <div class="register-box">
-      <div class="register-logo">
-        <a href="<?php echo base_url(); ?>assets/index2.html"><b>SI</b>SEPEDA</a>
-      </div>
-
-      <div class="register-box-body">
-        <p class="login-box-msg">Masuk ke Sistem Informasi </p>
-        <form action="<?php echo base_url(); ?>assets/index.html" method="post" onSubmit="return cek()">
-
-          <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email" required/>
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-          </div>
-           
-          <div class="form-group has-feedback">
-            <input type="password" name="pas" class="form-control" placeholder="Password" required/>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-          </div>
-          
+    
+        
+        <section class="content">
           <div class="row">
-            <div class="col-xs-8">    
-                                    
-            </div><!-- /.col -->
-            <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
-            </div><!-- /.col -->
-          </div>
-        </form>        
-
-
-        <a href="pendaftaran" class="text-center">Belum Punya Akun?</a>
-      </div><!-- /.form-box -->
-    </div><!-- /.register-box -->
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Riwayat Peminjaman Sepeda</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Tanggal Peminjaman</th>
+                        <th>Tanggal Pengembalian</th>
+                        <th>Sepeda Anak-Anak</th>
+                        <th>Sepeda Standar</th>
+                        <th>Sepeda Gunung</th>
+                        <th>Sepeda Tandem</th>
+                        <th>Total Harga</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>100000</td>
+                      <tr>
+                        <td>2</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>100000</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>100000</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>100000</td>
+                      </tr> 
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>100000</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>100000</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>100000</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>100000</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>500000</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>400000</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>300000</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>Internet
+                          Explorer 4.0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>200000</td>
+                      </tr>
+                      
+                    </tbody>
+                    <tfoot>
+                     <tr>
+                        <th>No</th>
+                        <th>Tanggal Peminjaman</th>
+                        <th>Tanggal Pengembalian</th>
+                        <th>Sepeda Anak-Anak</th>
+                        <th>Sepeda Standar</th>
+                        <th>Sepeda Gunung</th>
+                        <th>Sepeda Tandem</th>
+                        <th>Total Harga</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+              </div>
+              </div>
+              </section>
+  
 
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -69,6 +225,31 @@
           checkboxClass: 'icheckbox_square-blue',
           radioClass: 'iradio_square-blue',
           increaseArea: '20%' // optional
+        });
+      });
+    </script>
+    <!-- DATA TABES SCRIPT -->
+    <script src="<?php echo base_url(); ?>assets/plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <!-- SlimScroll -->
+    <script src="<?php echo base_url(); ?>assets/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- FastClick -->
+    <script src='<?php echo base_url(); ?>assets/plugins/fastclick/fastclick.min.js'></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo base_url(); ?>assets/dist/js/app.min.js" type="text/javascript"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="<?php echo base_url(); ?>assets/dist/js/demo.js" type="text/javascript"></script>
+    <!-- page script -->
+    <script type="text/javascript">
+      $(function () {
+        $("#example1").dataTable();
+        $('#example2').dataTable({
+          "bPaginate": true,
+          "bLengthChange": false,
+          "bFilter": false,
+          "bSort": true,
+          "bInfo": true,
+          "bAutoWidth": false
         });
       });
     </script>
