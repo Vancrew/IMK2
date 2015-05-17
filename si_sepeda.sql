@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2015 at 10:14 AM
+-- Generation Time: May 17, 2015 at 05:08 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -41,7 +41,27 @@ CREATE TABLE IF NOT EXISTS `anggota` (
 --
 
 INSERT INTO `anggota` (`nama`, `noktp`, `alamat`, `email`, `telp`, `password`, `status`) VALUES
-('Mohammad Wahyu Hidayat', '3212010304940001', 'Sukolilo Park Regency A5', 'im26vancrew@gmail.com', '091912953288', 'wahyu', 'AKTIF');
+('Mohammad Wahyu Hidayat', '3212010304940001', 'Sukolilo Park Regency A5', 'im26vancrew@gmail.com', '091912953288', 'wahyu', 'AKTIF'),
+('Risyanggi Azmi Faizin', '2212010703930004', 'Sukolilo Park Regency A5 Surabaya', 'switgarlik@gmail.com', '082963852746', 'llllll', 'AKTIF');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `peminjaman`
+--
+
+CREATE TABLE IF NOT EXISTS `peminjaman` (
+  `id_peminjaman` varchar(5) NOT NULL,
+  `noktp` varchar(16) NOT NULL,
+  `tanggal_peminjaman` date NOT NULL,
+  `tanggal_pengembalian` date NOT NULL,
+  `jml_spd_anak` int(11) NOT NULL,
+  `jml_spd_standar` int(11) NOT NULL,
+  `jml_spd_gunung` int(11) NOT NULL,
+  `jml_spd_tandem` int(11) NOT NULL,
+  `biaya` int(11) NOT NULL,
+  `status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -132,6 +152,12 @@ INSERT INTO `sepeda` (`NO_ID`, `Jenis`, `Status`) VALUES
 --
 ALTER TABLE `anggota`
  ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `peminjaman`
+--
+ALTER TABLE `peminjaman`
+ ADD PRIMARY KEY (`id_peminjaman`);
 
 --
 -- Indexes for table `petugas`
