@@ -22,8 +22,10 @@ class Petugas extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url');
-
+		$this->load->database();
         $this->load->library('session');
+        $this->load->model('petugas_model');
+        $this->load->library('grocery_CRUD');
 
 		
 	}
@@ -34,6 +36,50 @@ class Petugas extends CI_Controller {
 	// 	$this->load->view('template/header_petugas');
 	// 	$this->load->view('petugas/petugas_pembayaran');
 	// 	$this->load->view('template/footer');
+	}
+	
+	public function cek_login()
+	{
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+		$result=$this->petugas_model->login($username,$password);
+		if($result->num_rows()){
+			
+			$array = array(
+                   'user'  => $username,
+                   'logged_in' => TRUE,
+                   'hak' => $result->result()[0]->Hak_Akses
+               );
+			$this->session->set_userdata($array);
+			
+			redirect('/petugas/gudang_sepeda');
+		}
+		else
+		{
+			echo "login gagal";
+		}
+		
+	}
+	public function home()
+	{
+		$this->load->view('template/header');
+		$this->load->view('template/sidebar');
+	}
+	public function log_out(){
+		$this->session->sess_destroy();
+		redirect('/petugas/masuk');
+	}
+	public function gudang_sepeda()
+	{
+		$crud=new Grocery_CRUD();
+        $crud->set_table('sepeda')
+            	->required_fields('NO_ID','Jenis','Status');
+                
+        $output = $crud->render();
+		
+		$this->load->view('template/header',$output);
+		$this->load->view('template/sidebar');
+		$this->load->view('petugas/gudang_sepeda',$output);
 	}
 	public function peminjaman()
 	{
@@ -49,6 +95,7 @@ class Petugas extends CI_Controller {
 	}
 	public function masuk()
 	{
+
 		$this->load->view('petugas/masuk');
 	}
 }
