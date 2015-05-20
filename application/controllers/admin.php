@@ -67,17 +67,16 @@ class admin extends CI_Controller {
 		$this->load->view('admin/data_petugas',$output);
 	}
 
-	public function data_anggota()
+	public function report_peminjaman()
 	{
 		$crud= new Grocery_CRUD();
-        $crud->set_table('anggota')
-            	->required_fields('nama','noktp','alamat','email','telp');
+        $crud->set_table('peminjaman')->required_fields('id_peminjaman','noktp','tanggal_peminjaman','tanggal_pengembalian','jml_spd_anak','jml_spd_standar','jml_spd_gunung','jml_spd_tandem','biaya','status');
                 
         $output = $crud->render();
 		
 		$this->load->view('template/header',$output);
 		$this->load->view('template/sidebar');
-		$this->load->view('admin/data_petugas',$output);
+		$this->load->view('admin/report_peminjaman',$output);
 	}
 
 	public function cek_login()
