@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Peminjaman Sepeda | Pendaftaran Anggota</title>
-    <SCRIPT language="javascript" type="text/javascript" src="<?php echo base_url(); ?>assets/ckck.js">
+    
     </script>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
@@ -25,28 +25,29 @@
   <body class="register-page">
     <div class="register-box">
   
-
+      <div id="successMessage"class="alert alert-success alert-dismissible" style="display:none;"role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Pendaftaran Berhasil!</strong> Terima kasih telah mendaftar.</div>
       <div class="register-box-body">
         <p class="login-box-msg">Pendaftaran Anggota Baru</p>
-        <form action="<?php echo base_url(); ?>index.php/anggota/daftar" method="post" onSubmit="return cek()">
+        <form id="daftar" action="<?php echo base_url(); ?>index.php/anggota/daftar" method="post">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="nama"placeholder="Nama Lengkap" required/>
+            <input type="text" id="nama" class="form-control" name="nama"placeholder="Nama Lengkap" required/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
            <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="noktp" placeholder="Nomor KTP" required/>
+            <input type="text" class="form-control" id="noktp" name="noktp" placeholder="Nomor KTP" required/>
             <span class="glyphicon glyphicon-credit-card form-control-feedback"></span>
           </div>
            <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="alamat" placeholder="Alamat" required/>
+            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" required/>
             <span class="glyphicon glyphicon-home form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="email" class="form-control" name="email" placeholder="Email" required/>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
            <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="telp" placeholder="Nomor Telepon" required/>
+            <input type="text" class="form-control" name="telp" id="telp" placeholder="Nomor Telepon" required/>
             <span class="glyphicon glyphicon-phone form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
@@ -63,12 +64,10 @@
                                     
             </div><!-- /.col -->
             <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Daftar</button>
+              <button id="submit" type="submit" class="btn btn-primary btn-block btn-flat">Daftar</button>
             </div><!-- /.col -->
           </div>
         </form>        
-
-
         <a href="masuk" class="text-center">Sudah Punya Akun?</a>
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
@@ -77,17 +76,94 @@
     <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/js/bootbox.min.js" type="text/javascript"></script>
     <!-- iCheck -->
-    <script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+    <!--<script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js" type="text/javascript"></script>-->
+    
     <script>
       $(function () {
-        $('input').iCheck({
-          checkboxClass: 'icheckbox_square-blue',
-          radioClass: 'iradio_square-blue',
-          increaseArea: '20%' // optional
-        });
+        // $('input').iCheck({
+        //   checkboxClass: 'icheckbox_square-blue',
+        //   radioClass: 'iradio_square-blue',
+        //   increaseArea: '20%' // optional
+        // });
         $(document).ready(function () {
            $("#txtConfirmPassword").keyup(checkPasswordMatch);
+        })
+        $('#submit').click(function(e){
+          e.preventDefault();
+          var message="<div class='row'><div class='col-md-12'> \
+                        <div class='col-md-3'> \
+                          Nama Lengkap          \
+                        </div>                  \
+                        <div class='col-md-3'>  \
+                            "+$('#nama').val()+" \
+                        </div>                  \
+                      </div>                  \
+                      <div class='col-md-12'> \
+                        <div class='col-md-3'> \
+                          Nomor KTP         \
+                        </div>                  \
+                        <div class='col-md-3'>  \
+                            "+$('#noktp').val()+" \
+                        </div>                  \
+                      </div>                  \
+                      <div class='col-md-12'> \
+                        <div class='col-md-3'> \
+                          Alamat          \
+                        </div>                  \
+                        <div class='col-md-3'>  \
+                            "+$('#alamat').val()+" \
+                        </div>                  \
+                      </div>                  \
+                      <div class='col-md-12'> \
+                        <div class='col-md-3'> \
+                          Email        \
+                        </div>                  \
+                        <div class='col-md-3'>  \
+                            "+$('#email').val()+" \
+                        </div>                  \
+                      </div>                  \
+                      <div class='col-md-12'> \
+                        <div class='col-md-3'> \
+                          Telepon          \
+                        </div>                  \
+                        <div class='col-md-3'>  \
+                            "+$('#telp').val()+" \
+                        </div>                  \
+                      </div>"
+          bootbox.dialog({
+              message: message,
+              title: "Apakah data dibawah ini telah benar",
+              buttons: {
+                danger: {
+                  label: "Batal!",
+                  className: "btn-danger",
+                  callback: function() {
+                    
+                  }
+                },
+                success: {
+                  label: "OK",
+                  className: "btn-success",
+                  callback: function() {
+                     $.ajax({
+                        url: "<?php echo base_url(); ?>index.php/anggota/daftar",
+                        type: 'post',
+                        dataType: 'json',
+                        data: $("#daftar").serialize(),
+                        success: function(data) {
+                           if(data.status=='sukses')
+                           {
+                            $('#successMessage').show();
+                           }
+                         }
+                    });
+                    
+                  }
+                }
+              }
+            });
         })
         function checkPasswordMatch() {
             var password = $("#txtNewPassword").val();

@@ -50,7 +50,13 @@ class Anggota extends CI_Controller {
 		$password=$_POST['password'];
 		$retval=$this->anggota_model->insert_entry($nama,$noktp,$alamat,$email,$telp,$password);
 		if($retval){
-			echo "sukses";
+			$arr = array('status' => "sukses");
+			echo json_encode($arr);
+		}
+		else
+		{
+			$arr = array('status' => "gagal");
+			echo json_encode($arr);
 		}
 	}
 	public function masuk()
