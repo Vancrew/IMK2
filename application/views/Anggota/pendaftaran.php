@@ -92,11 +92,19 @@
         })
         $('#submit').click(function(e){
           e.preventDefault();
+          var message2="<div class='row'><div class='col-md-12'> \
+                        <div class='col-md-3'> \
+                                    \
+                        </div>                  \
+                        <div class='col-md-6'>  \
+                            Password Anda Tidak Sama \
+                        </div>                  \
+                      </div>"
           var message="<div class='row'><div class='col-md-12'> \
                         <div class='col-md-3'> \
                           Nama Lengkap          \
                         </div>                  \
-                        <div class='col-md-3'>  \
+                        <div class='col-md-6'>  \
                             "+$('#nama').val()+" \
                         </div>                  \
                       </div>                  \
@@ -104,7 +112,7 @@
                         <div class='col-md-3'> \
                           Nomor KTP         \
                         </div>                  \
-                        <div class='col-md-3'>  \
+                        <div class='col-md-6'>  \
                             "+$('#noktp').val()+" \
                         </div>                  \
                       </div>                  \
@@ -112,7 +120,7 @@
                         <div class='col-md-3'> \
                           Alamat          \
                         </div>                  \
-                        <div class='col-md-3'>  \
+                        <div class='col-md-6'>  \
                             "+$('#alamat').val()+" \
                         </div>                  \
                       </div>                  \
@@ -120,7 +128,7 @@
                         <div class='col-md-3'> \
                           Email        \
                         </div>                  \
-                        <div class='col-md-3'>  \
+                        <div class='col-md-6'>  \
                             "+$('#email').val()+" \
                         </div>                  \
                       </div>                  \
@@ -128,12 +136,18 @@
                         <div class='col-md-3'> \
                           Telepon          \
                         </div>                  \
-                        <div class='col-md-3'>  \
+                        <div class='col-md-6'>  \
                             "+$('#telp').val()+" \
                         </div>                  \
                       </div>"
-          bootbox.dialog({
-              message: message,
+
+          var password = $("#txtNewPassword").val();
+          var confirmPassword = $("#txtConfirmPassword").val();
+
+          if (password == confirmPassword) 
+          {
+            bootbox.dialog({
+              message: "Password Tidak Sama",
               title: "Apakah data dibawah ini telah benar",
               buttons: {
                 danger: {
@@ -147,23 +161,40 @@
                   label: "OK",
                   className: "btn-success",
                   callback: function() {
-                     $.ajax({
-                        url: "<?php echo base_url(); ?>index.php/anggota/daftar",
-                        type: 'post',
-                        dataType: 'json',
-                        data: $("#daftar").serialize(),
-                        success: function(data) {
-                           if(data.status=='sukses')
-                           {
-                            $('#successMessage').show();
-                           }
-                         }
+                   $.ajax({
+                      url: "<?php echo base_url(); ?>index.php/anggota/daftar",
+                      type: 'post',
+                      dataType: 'json',
+                      data: $("#daftar").serialize(),
+                      success: function(data) {
+                       if(data.status=='sukses')
+                       {
+                        $('#successMessage').show();
+                       }
+                      }
                     });
+                      
+                  }
+                }
+              }
+            });
+          }
+          else
+          {
+            bootbox.dialog({
+              message: message2,
+              title: "Error",
+              buttons: {
+                danger: {
+                  label: "Kembali",
+                  className: "btn-danger",
+                  callback: function() {
                     
                   }
                 }
               }
             });
+          }
         })
         function checkPasswordMatch() {
             var password = $("#txtNewPassword").val();
