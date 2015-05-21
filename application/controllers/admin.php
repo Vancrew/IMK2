@@ -33,14 +33,7 @@ class admin extends CI_Controller {
 	{
 		$this->load->view('anggota/pendaftaran');
 	}
-	public function tambah_petugas()
-	{
-		$this->load->view('anggota/pendaftaran');
-
-		// $this->load->view('template/header_petugas');
-		// $this->load->view('petugas/petugas_pendaftaran');
-		// $this->load->view('template/footer');
-	}
+	
 	public function daftar()
 	{
 		$nama=$_POST['nama'];
@@ -56,15 +49,32 @@ class admin extends CI_Controller {
 	}
 	public function data_petugas()
 	{
+
 		$crud= new Grocery_CRUD();
-        $crud->set_table('petugas')
-            	->required_fields('Nama','No_KTP','Alamat','Telepon','Email');
+        $crud->set_table('petugas')	->required_fields('Nama','No_KTP','Alamat','Telepon','Email');
+        $crud->change_field_type('Password', 'password');
+        $crud->field_type('Hak_Akses','dropdown',
+            array('1' => 'petugas', '2' => 'admin'));    	
+
                 
         $output = $crud->render();
 		
 		$this->load->view('template/header',$output);
 		$this->load->view('template/sidebar');
-		$this->load->view('admin/data_petugas',$output);
+		$this->load->view('admin/menampilkan',$output);
+	}
+	public function data_anggota()
+	{
+
+		$crud= new Grocery_CRUD();
+        $crud->set_table('anggota')
+            	->required_fields('nama','noktp','alamat','email','telp','password');
+        $crud->change_field_type('password', 'password');        
+        $output = $crud->render();
+		
+		$this->load->view('template/header',$output);
+		$this->load->view('template/sidebar');
+		$this->load->view('admin/menampilkan',$output);
 	}
 
 	public function report_peminjaman()
@@ -112,5 +122,13 @@ class admin extends CI_Controller {
 		{
 			redirect('/anggota/masuk');
 		}
+	}
+	public function tambah_petugas()
+	{
+		$this->load->view('admin/tambah_petugas');
+
+		// $this->load->view('template/header_petugas');
+		// $this->load->view('petugas/petugas_pendaftaran');
+		// $this->load->view('template/footer');
 	}
 }
