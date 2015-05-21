@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2015 at 09:50 AM
+-- Generation Time: May 22, 2015 at 01:45 AM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -76,9 +76,10 @@ CREATE TABLE IF NOT EXISTS `petugas` (
   `No_KTP` varchar(16) NOT NULL,
   `Alamat` varchar(100) NOT NULL,
   `Telepon` bigint(15) NOT NULL,
-  `Email` varchar(15) NOT NULL,
+  `Email` varchar(30) NOT NULL,
   `Username` varchar(20) NOT NULL,
   `Password` varchar(20) NOT NULL,
+  `Hak_Akses` varchar(10) NOT NULL DEFAULT 'petugas',
   `Status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`Username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -87,8 +88,10 @@ CREATE TABLE IF NOT EXISTS `petugas` (
 -- Dumping data for table `petugas`
 --
 
-INSERT INTO `petugas` (`Nama`, `No_KTP`, `Alamat`, `Telepon`, `Email`, `Username`, `Password`, `Status`) VALUES
-('Wahyu', '1371101902950002', 'Haurgelis', 62819992233454, 'vancrew@gmail.c', 'vancrew', 'vancrew123', 1);
+INSERT INTO `petugas` (`Nama`, `No_KTP`, `Alamat`, `Telepon`, `Email`, `Username`, `Password`, `Hak_Akses`, `Status`) VALUES
+('Thiar', '199400219022003', 'Mojokerto', 85363899988, 'thiar@hasbiya', 'aa', 'bb', 'Petugas', 0),
+('Hidayat', '1992007201220014', 'SPR A5', 7055584, 'hidayat@vancrew.com', 'hida', 'hidayat', '1', 1),
+('Wahyu', '1371101902950002', 'Haurgelis', 62819992233454, 'vancrew@gmail.c', 'vancrew', 'vancrew123', 'Petugas', 1);
 
 -- --------------------------------------------------------
 
