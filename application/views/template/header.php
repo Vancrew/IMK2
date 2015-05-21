@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>SIDa (Sistem Inovasi Daerah)</title>
+    <title>SIP (Sistem Informasi Sepeda)</title>
     
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url()."assets/css/bootstrap.min.css"?>" />
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url()."assets/css/style.css"?>" />

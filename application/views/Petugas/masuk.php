@@ -30,8 +30,8 @@
         <form action="<?php echo base_url(); ?>index.php/petugas/cek_login" method="post" onSubmit="return cek()">
 
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="username" placeholder="Email" required/>
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <input type="text" class="form-control" name="username" placeholder="Username" required/>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
            
           <div class="form-group has-feedback">

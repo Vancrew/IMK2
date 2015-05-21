@@ -73,7 +73,9 @@ class Petugas extends CI_Controller {
 	{
 		$crud=new Grocery_CRUD();
         $crud->set_table('sepeda')
-            	->required_fields('NO_ID','Jenis','Status');
+        	->required_fields('NO_ID','Jenis','Status')
+        		->columns('NO_ID','Jenis','Status');
+         
                 
         $output = $crud->render();
 		
