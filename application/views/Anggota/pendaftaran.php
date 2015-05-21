@@ -147,7 +147,7 @@
           if (password == confirmPassword) 
           {
             bootbox.dialog({
-              message: "Password Tidak Sama",
+              message: message,
               title: "Apakah data dibawah ini telah benar",
               buttons: {
                 danger: {
