@@ -10,6 +10,7 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url()."assets/css/bootstrap-theme.min.css"?>" />
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url()."assets/css/select2-bootstrap.css"?>" />
 	<link href="<?php echo base_url(); ?>assets/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="<?php echo base_url()."assets/"?>js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url()."assets/"?>js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url()."assets/"?>js/scripts.js"></script>
@@ -32,12 +33,13 @@
 					<li class="">
 						<a href="<?php echo site_url('/')?>" class="navbar-brand pull-left">Basis Data Sistem Peminjaman Sepeda</a>
 					</li>
+					
 					<?php if($this->session->userdata('logged_in')){
 						$session_data = $this->session->userdata('logged_in');
           				$data['user'] = $session_data['user'];
             			$data['hak'] = $session_data['hak'];
             			echo $data['hak'];
-            			if($data['hak']=='admin' || $data['hak']=='Petugas'){?>
+            			if($data['hak']=='admin' || $data['hak']=='petugas'){?>
 					<li class="dropdown pull-right">
 						<a href="<?php echo site_url('petugas/log_out')?>">Logout</a>
 					</li>
@@ -47,6 +49,9 @@
 					</li>
 					<?php } ?>
 					<?php }?>
+					<li class="dropdown pull-right">
+						<a style="pointer-events: none;cursor: default;"><i class="fa fa-user fa-lg"> </i> <?php echo $data['user']; ?></a>
+					</li>
 				</ul>
 			</div>
 		</div>
