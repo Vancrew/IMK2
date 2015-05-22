@@ -99,7 +99,7 @@ class admin extends CI_Controller {
                    'email'  => $email,
                    'logged_in' => TRUE
                );
-			$this->session->set_userdata($array);
+			$this->session->set_userdata('logged_in',$array);
 			redirect('/anggota/riwayat');
 		}
 		else
