@@ -31,6 +31,8 @@ class Petugas extends CI_Controller {
 	}
 	public function index()
 	{
+		$this->load->view('template/header');
+		$this->load->view('template/sidebar');
 		$this->load->view('petugas/peminjaman');
 		
 	// 	$this->load->view('template/header_petugas');
@@ -51,12 +53,12 @@ class Petugas extends CI_Controller {
                    'hak' => $result->result()[0]->Hak_Akses
                );
 			$this->session->set_userdata('logged_in',$array);
-			
+			echo $result->result()[0]->Hak_Akses;
 			redirect('/petugas/gudang_sepeda');
 		}
 		else
 		{
-			echo "login gagal";
+			redirect('/petugas/masuk?login=failed');
 		}
 		
 	}
@@ -85,6 +87,8 @@ class Petugas extends CI_Controller {
 	}
 	public function peminjaman()
 	{
+		$this->load->view('template/header');
+		$this->load->view('template/sidebar');
 		$this->load->view('petugas/peminjaman');
 	}
 	public function pendaftaran()
@@ -99,49 +103,5 @@ class Petugas extends CI_Controller {
 	{
 
 		$this->load->view('petugas/masuk');
-	}
-
-	// ADmin
-
-	public function data_petugas()
-	{
-
-		$crud= new Grocery_CRUD();
-        $crud->set_table('petugas')	->required_fields('Nama','No_KTP','Alamat','Telepon','Email');
-        $crud->change_field_type('Password', 'password');
-        $crud->field_type('Hak_Akses','dropdown',
-            array('1' => 'petugas', '2' => 'admin'));    	
-
-                
-        $output = $crud->render();
-		
-		$this->load->view('template/header',$output);
-		$this->load->view('template/sidebar');
-		$this->load->view('admin/menampilkan',$output);
-	}
-	public function data_anggota()
-	{
-
-		$crud= new Grocery_CRUD();
-        $crud->set_table('anggota')
-            	->required_fields('nama','noktp','alamat','email','telp','password');
-        $crud->change_field_type('password', 'password');        
-        $output = $crud->render();
-		
-		$this->load->view('template/header',$output);
-		$this->load->view('template/sidebar');
-		$this->load->view('admin/menampilkan',$output);
-	}
-
-	public function report_peminjaman()
-	{
-		$crud= new Grocery_CRUD();
-        $crud->set_table('peminjaman')->required_fields('id_peminjaman','noktp','tanggal_peminjaman','tanggal_pengembalian','jml_spd_anak','jml_spd_standar','jml_spd_gunung','jml_spd_tandem','biaya','status');
-                
-        $output = $crud->render();
-		
-		$this->load->view('template/header',$output);
-		$this->load->view('template/sidebar');
-		$this->load->view('admin/menampilkan',$output);
 	}
 }
