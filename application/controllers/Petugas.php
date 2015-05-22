@@ -31,8 +31,6 @@ class Petugas extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('template/header');
-		$this->load->view('template/sidebar');
 		$this->load->view('petugas/peminjaman');
 		
 	// 	$this->load->view('template/header_petugas');
@@ -53,16 +51,12 @@ class Petugas extends CI_Controller {
                    'hak' => $result->result()[0]->Hak_Akses
                );
 			$this->session->set_userdata('logged_in',$array);
-<<<<<<< HEAD
 			
-=======
-			echo $result->result()[0]->Hak_Akses;
->>>>>>> 34fddacd4f9c1e7773cc4eda42085398832bf629
 			redirect('/petugas/gudang_sepeda');
 		}
 		else
 		{
-			redirect('/petugas/masuk?login=failed');
+			echo "login gagal";
 		}
 		
 	}
