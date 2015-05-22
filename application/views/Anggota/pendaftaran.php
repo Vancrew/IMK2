@@ -61,14 +61,14 @@
           </div>
           <div class="row">
             <div class="col-xs-8">    
-                                    
+                    <a href="masuk" class="text-center">Sudah Punya Akun?</a>       
             </div><!-- /.col -->
             <div class="col-xs-4">
               <button id="submit" type="submit" class="btn btn-primary btn-block btn-flat">Daftar</button>
             </div><!-- /.col -->
           </div>
         </form>        
-        <a href="masuk" class="text-center">Sudah Punya Akun?</a>
+        
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
 

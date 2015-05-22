@@ -45,7 +45,7 @@
           
           <div class="row">
             <div class="col-xs-8">    
-                                    
+                     <a href="pendaftaran" class="text-center">Belum Punya Akun?</a>               
             </div><!-- /.col -->
             <div class="col-xs-4">
               <button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
@@ -54,7 +54,7 @@
         </form>        
 
 
-        <a href="pendaftaran" class="text-center">Belum Punya Akun?</a>
+        
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
 
