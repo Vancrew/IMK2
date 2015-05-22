@@ -74,7 +74,9 @@ class Anggota extends CI_Controller {
                    'email'  => $email,
                    'logged_in' => TRUE,
                    'noktp' => $result->result()[0]->noktp,
-                   'nama' =>$result->result()[0]->nama
+                   'user' =>$result->result()[0]->nama,
+                   'nama' =>$result->result()[0]->nama,
+                   'hak' => 'anggota'
                );
 			$this->session->set_userdata('logged_in',$array);
 			
@@ -96,13 +98,14 @@ class Anggota extends CI_Controller {
 		if($this->session->userdata('logged_in')){
 			
 	        $session_data = $this->session->userdata('logged_in');
-	        $data['nama'] = $session_data['nama'];
+	        $data['user'] = $session_data['nama'];
 	        $data['noktp'] = $session_data['noktp'];
 	        
 	        $result=$this->anggota_model->riwayat($data['noktp']);
 	        $data['riwayat']=$result;
 	    
-
+	        $this->load->view('template/header');
+	        $this->load->view('template/sidebar');		
 			$this->load->view('anggota/riwayat',$data);	
 		}
 		else
