@@ -20,13 +20,7 @@
 
     </div>
 
-    <a href="#pengelolaan_admin2" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Transaksi</a>
-    
-    <div class="collapse" id="pengelolaan_admin2">
    
-                <a class="list-group-item" href="<?php echo site_url('petugas/data_petugas');?>">Peminjaman</a>
-                 <a class="list-group-item" href="<?php echo site_url('petugas/gudang_sepeda')?>">Pengembalian</a>
-    </div>
 
     <a href="#Laporan" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Laporan</a>
     
@@ -57,20 +51,7 @@
     </div>
     <?php } ?>
 
-    <?php if($data['hak']=="admin"){ ?>
-    <a href="#data-daerah" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Transaksi</a>
     
-    <div class="collapse" id="Laporan">
-   
-                <a class="list-group-item" href="<?php echo site_url('petugas/peminjaman');?>">Peminjaman</a>
-                 <a class="list-group-item" href="<?php echo site_url('petugas/pengembalian')?>">Keuangan</a>
-
-    </div>
-    
-
-
-    
-    <?php } ?>
 
    
     
@@ -85,15 +66,7 @@
    
     
     
-	<?php if($data['hak']=="admin"){ ?>
-	<a href="#nilai-tambah" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Pengelolaan Data</a>
-    <div class="collapse" id="nilai-tambah">
-                <a class="list-group-item" href="<?php echo site_url('admin/data_petugas');?>">Petugas</a>
-                <a class="list-group-item" href="<?php echo site_url('admin/data_petugas');?>">Anggota</a>
-
-                <a class="list-group-item" href="<?php echo site_url('petugas/gudang_sepeda');?>">Sepeda</a>
-    </div>
-    <?php } ?>
+	
 	<?php } ?>
 	
     
