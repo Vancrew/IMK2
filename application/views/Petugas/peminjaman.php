@@ -47,7 +47,8 @@
           <div class="row">
             <!-- left column -->
 
-            <div class="col-md-4"></div>
+            <div class="col-md-2"></div>
+            
             <div class="col-md-4">
               <!-- general form elements -->
              <div class="box box-primary">

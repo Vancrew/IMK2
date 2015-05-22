@@ -30,12 +30,13 @@
 			<div class="col-md-12 column">
 				<ul class="nav">
 					<li class="">
-						<a href="<?php echo site_url('/')?>" class="navbar-brand pull-left">Basis Data Sistem Inovasi Daerah (SIDa)</a>
+						<a href="<?php echo site_url('/')?>" class="navbar-brand pull-left">Basis Data Sistem Peminjaman Sepeda</a>
 					</li>
 					<?php if($this->session->userdata('logged_in')){
 						$session_data = $this->session->userdata('logged_in');
           				$data['user'] = $session_data['user'];
             			$data['hak'] = $session_data['hak'];
+            			echo $data['hak'];
             			if($data['hak']=='admin' || $data['hak']=='Petugas'){?>
 					<li class="dropdown pull-right">
 						<a href="<?php echo site_url('petugas/log_out')?>">Logout</a>
@@ -45,37 +46,7 @@
 						<a href="<?php echo site_url('anggota/log_out')?>">Logout</a>
 					</li>
 					<?php } ?>
-					<?php }else {?>
-					<li class="dropdown pull-right" id="login">
-						<a id="login-trigger" class="active">
-					        Log in <span>▼</span>
-				        </a>
-					      <div id="login-content" style="display:none;">
-					        <form action="<?php echo site_url('c_verifylogin')?>" method="post">
-					          <fieldset id="inputs">
-					            <input id="username" type="text" name="username" placeholder="Username" required/><br/>
-					            <input id="password" type="password" name="password" placeholder="Password" required/>
-					          </fieldset>
-					          <fieldset id="actions">
-					            <input class="pull-right" type="submit" id="submit" value="Login">
-					          </fieldset>
-					        </form>
-					        <br/><br/>
-					      </div>     
-					</li>
-					<script type="text/javascript">
-						$(document).ready(function(){
-						  $('#login-trigger').click(function(){
-						    $(this).next('#login-content').slideToggle();
-						    $(this).toggleClass('active');          
-						    
-						    if ($(this).hasClass('active')) $(this).find('span').html('&#x25BC;')
-						      else $(this).find('span').html('&#x25B2;')
-						    })
-						});
-					</script>
-					<?php } ?>
-					<li class="pull-right"><a href="<?php echo site_url('manage/index');?>">Home</a></li>
+					<?php }?>
 				</ul>
 			</div>
 		</div>

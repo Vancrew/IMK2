@@ -34,6 +34,7 @@ class Anggota extends CI_Controller {
 	}
 	public function pendaftaran()
 	{
+		$this->load->view('template/header');
 		$this->load->view('anggota/pendaftaran');
 
 		// $this->load->view('template/header_petugas');
@@ -61,6 +62,7 @@ class Anggota extends CI_Controller {
 	}
 	public function masuk()
 	{
+		$this->load->view('template/header');
 		$this->load->view('anggota/masuk');
 	}
 	public function cek_login()
@@ -84,7 +86,7 @@ class Anggota extends CI_Controller {
 		}
 		else
 		{
-			echo "login gagal";
+			redirect('/anggota/masuk?login=failed');
 		}
 		
 	}
