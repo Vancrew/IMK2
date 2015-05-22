@@ -13,7 +13,7 @@
     <a href="#data-daerah" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Data Daerah</a>
     
     <div class="collapse" id="data-daerah">
-    <?php if($data['hak']=="admin"){ ?>
+    <?php if($data['hak']=="petugas"){ ?>
                 <a class="list-group-item" href="<?php echo site_url('manage/nasional');?>">Negara</a>
                 <a class="list-group-item" href="<?php echo site_url('manage/propinsi')?>">Propinsi</a>
     <?php } ?>
@@ -98,10 +98,12 @@
                 <a class="list-group-item" href="<?php echo site_url('manage/potensi');?>">Potensi</a>
     </div>
 	<?php if($data['hak']=="admin"){ ?>
-	<a href="#nilai-tambah" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Nilai Tambah</a>
+	<a href="#nilai-tambah" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Pengelolaan Data</a>
     <div class="collapse" id="nilai-tambah">
-                <a class="list-group-item" href="<?php echo site_url('manage/nilai_tambah');?>">Nilai Tambah</a>
-                <a class="list-group-item" href="<?php echo site_url('manage/produk');?>">Produk</a>
+                <a class="list-group-item" href="<?php echo site_url('admin/data_petugas');?>">Petugas</a>
+                <a class="list-group-item" href="<?php echo site_url('admin/data_petugas');?>">Anggota</a>
+
+                <a class="list-group-item" href="<?php echo site_url('petugas/gudang_sepeda');?>">Sepeda</a>
     </div>
     <?php } ?>
 	<?php } ?>

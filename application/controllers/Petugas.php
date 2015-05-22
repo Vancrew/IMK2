@@ -51,7 +51,7 @@ class Petugas extends CI_Controller {
                    'hak' => $result->result()[0]->Hak_Akses
                );
 			$this->session->set_userdata($array);
-			
+			echo $result->result()[0]->Hak_Akses;
 			redirect('/petugas/gudang_sepeda');
 		}
 		else
