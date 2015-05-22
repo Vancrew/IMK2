@@ -24,7 +24,11 @@
   </head>
   <body class="register-page">
     <div class="register-box">
-     
+      <?php if(isset($_GET['login']) && $_GET['login']=='failed'){ ?>
+     <div id="successMessage"class="alert  alert-dismissible" style="background-color:#FF4545;"role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Login Gagal!</strong> username dan password salah.</div>
+    <?php } ?>
+
       <div class="register-box-body">
         <p class="login-box-msg">Masuk ke Sistem Informasi </p>
         <form action="<?php echo base_url(); ?>index.php/anggota/cek_login" method="post" onSubmit="return cek()">
@@ -41,7 +45,7 @@
           
           <div class="row">
             <div class="col-xs-8">    
-                                    
+                     <a href="pendaftaran" class="text-center">Belum Punya Akun?</a>               
             </div><!-- /.col -->
             <div class="col-xs-4">
               <button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
@@ -50,7 +54,7 @@
         </form>        
 
 
-        <a href="pendaftaran" class="text-center">Belum Punya Akun?</a>
+        
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Peminjaman Sepeda | Pendaftaran Anggota</title>
+    <title>Reservasi Sepeda</title>
     <!-- Bootstrap 3.3.4 -->
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
@@ -47,13 +47,12 @@
           <div class="row">
             <!-- left column -->
 
-            <div class="col-md-2"></div>
-            
+            <div class="col-md-4"></div>
             <div class="col-md-4">
               <!-- general form elements -->
              <div class="box box-primary">
                 <div class="box-header" align="center">
-                  <h3 class="box-title">Isi Data Peminjaman</h3>
+                  <h3 class="box-title">Isi Data Reservasi</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
                 <form role="form">
@@ -61,7 +60,8 @@
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Nomor KTP</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nomor KTP Anda" required>
+                      <!-- Pingin auto fill sesuai no ktp login -->
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nomor KTP Anda" value="3212010304940001" disabled required> 
                     </div>
 
                     <div class="form-group">
@@ -160,9 +160,9 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-xs-9"> <a href="pendaftaran" class="text-center">Pengguna Belum terdaftar?</a></div>
+                      <div class="col-xs-9"> </div>
                       <div class="col-xs-3">
-                        <button type="submit" class="btn btn-primary">Pinjam</button>  
+                        <button type="submit" class="btn btn-primary">Reservasi</button>  
                       </div>
                     </div>
 
