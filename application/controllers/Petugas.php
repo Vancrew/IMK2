@@ -97,11 +97,59 @@ class Petugas extends CI_Controller {
 	}
 	public function pengembalian()
 	{
+		$this->load->view('template/header');
+		$this->load->view('template/sidebar');
 		$this->load->view('petugas/pengembalian');
 	}
 	public function masuk()
 	{
 
 		$this->load->view('petugas/masuk');
+	}
+
+
+
+
+
+	public function data_petugas()
+	{
+
+		$crud= new Grocery_CRUD();
+        $crud->set_table('petugas')	->required_fields('Nama','No_KTP','Alamat','Telepon','Email');
+        $crud->change_field_type('Password', 'password');
+        $crud->field_type('Hak_Akses','dropdown',
+            array('1' => 'petugas', '2' => 'admin'));    	
+
+                
+        $output = $crud->render();
+		
+		$this->load->view('template/header',$output);
+		$this->load->view('template/sidebar');
+		$this->load->view('admin/menampilkan',$output);
+	}
+	public function data_anggota()
+	{
+
+		$crud= new Grocery_CRUD();
+        $crud->set_table('anggota')
+            	->required_fields('nama','noktp','alamat','email','telp','password');
+        $crud->change_field_type('password', 'password');        
+        $output = $crud->render();
+		
+		$this->load->view('template/header',$output);
+		$this->load->view('template/sidebar');
+		$this->load->view('admin/menampilkan',$output);
+	}
+
+	public function report_peminjaman()
+	{
+		$crud= new Grocery_CRUD();
+        $crud->set_table('peminjaman')->required_fields('id_peminjaman','noktp','tanggal_peminjaman','tanggal_pengembalian','jml_spd_anak','jml_spd_standar','jml_spd_gunung','jml_spd_tandem','biaya','status');
+                
+        $output = $crud->render();
+		
+		$this->load->view('template/header',$output);
+		$this->load->view('template/sidebar');
+		$this->load->view('admin/report_peminjaman',$output);
 	}
 }
