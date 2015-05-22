@@ -33,6 +33,21 @@ class Petugas_model extends CI_Model {
         $this->db->insert('anggota', $data);
         return 1;
     }
+    function pinjam_sepeda($tanggal_peminjaman,$noktp,$tanggal_pengembalian,$jml_spd_anak,$jml_spd_standar,$jml_spd_gunung,$jml_spd_tandem,$status)
+    {
+        $data = array(
+           'tanggal_peminjaman' => $tanggal_peminjaman ,
+           'noktp' => $noktp ,
+           'tanggal_pengembalian' => $tanggal_pengembalian,
+           'jml_spd_anak' => $jml_spd_anak,
+           'jml_spd_standar' =>$jml_spd_standar,
+           'jml_spd_gunung' =>$jml_spd_gunung,
+           'jml_spd_tandem' =>$jml_spd_tandem,
+           'status' => $status
+        );
+        $this->db->insert('peminjaman', $data);
+        return 1;
+    }
     function login($username,$password)
     {
         $query = $this->db->get_where('petugas', array('username' => $username,'password' => $password), 1);
