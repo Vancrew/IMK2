@@ -37,6 +37,18 @@ class Anggota_model extends CI_Model {
         }
         return 1;
     }
+    
+    function riwayat($noktp)
+    {
+       
+        $this->db->select('*');
+        $this->db->from('peminjaman');
+        $this->db->join('anggota', 'anggota.noktp = peminjaman.noktp');
+        $this->db->where('anggota.noktp', $noktp);
+        $query=$this->db->get(); 
+        return $query->result_array();
+    }
+
     function login($email,$password)
     {
         $query = $this->db->get_where('anggota', array('email' => $email,'password' => $password), 1);
