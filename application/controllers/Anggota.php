@@ -113,4 +113,9 @@ class Anggota extends CI_Controller {
 			redirect('/anggota/masuk');
 		}
 	}
+	public function reservasi()
+	{
+		$this->load->view('anggota/reservasi');	
+	}
+
 }
