@@ -38,7 +38,7 @@
 						$session_data = $this->session->userdata('logged_in');
           				$data['user'] = $session_data['user'];
             			$data['hak'] = $session_data['hak'];
-            			echo $data['hak'];
+            			
             			if($data['hak']=='admin' || $data['hak']=='petugas'){?>
 					<li class="dropdown pull-right">
 						<a href="<?php echo site_url('petugas/log_out')?>">Logout</a>
