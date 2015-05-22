@@ -32,7 +32,7 @@
 
     <?php } ?>
 
-    <?php if($data['hak']=="Petugas" || $data['hak']=="admin"){ ?>
+    <?php if($data['hak']=="petugas" || $data['hak']=="admin"){ ?>
     <a href="#Transaksi" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Transaksi</a>
     
     <div class="collapse" id="Transaksi">
@@ -42,7 +42,7 @@
     </div>
     <?php } ?>
 
-    <?php if($data['hak']=="Petugas"){ ?>
+    <?php if($data['hak']=="petugas"){ ?>
     <a href="#Data3" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Pengelolaan Data</a>
     
     <div class="collapse" id="Data3">
