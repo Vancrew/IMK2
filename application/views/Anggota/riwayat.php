@@ -8,6 +8,7 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>assets/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
@@ -33,179 +34,44 @@
                   <h3 class="box-title">Riwayat Peminjaman Sepeda</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>Tanggal Peminjaman</th>
-                        <th>Tanggal Pengembalian</th>
-                        <th>Sepeda Anak-Anak</th>
-                        <th>Sepeda Standar</th>
-                        <th>Sepeda Gunung</th>
-                        <th>Sepeda Tandem</th>
-                        <th>Total Harga</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>100000</td>
-                      <tr>
-                        <td>2</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>100000</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>100000</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>100000</td>
-                      </tr> 
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>100000</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>100000</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>100000</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>100000</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>500000</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>400000</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>300000</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>200000</td>
-                      </tr>
+                  <table id="riwayatTable" class="table table-striped table-bordered"> 
+                  <thead>
+                    <tr>
+                      <th style="min-width: 160px;">Tanggal Peminjaman</th>
+                      <th style="min-width: 100px;">Tanggal Pengembalian</th>
+                      <th style="min-width: 100px;">Jumlah Sepeda Anak</th>
+                      <th style="min-width: 100px;">Jumlah Sepeda Standar</th>
+                      <th style="min-width: 100px;">Jumlah Sepeda Gunung</th>
+                      <th style="min-width: 100px;">Jumlah Sepeda Tandem</th>
                       
-                    </tbody>
-                    <tfoot>
-                     <tr>
-                        <th>No</th>
-                        <th>Tanggal Peminjaman</th>
-                        <th>Tanggal Pengembalian</th>
-                        <th>Sepeda Anak-Anak</th>
-                        <th>Sepeda Standar</th>
-                        <th>Sepeda Gunung</th>
-                        <th>Sepeda Tandem</th>
-                        <th>Total Harga</th>
-                      </tr>
-                    </tfoot>
-                  </table>
+                      <th style="min-width: 100px;">biaya</th>
+                     
+                    </tr>
+                </thead>
+                <tbody>
+
+                   <?php foreach ($riwayat as $i)
+                   {
+
+                    echo '<tr>';
+                      
+                      ?>
+
+                     
+                  <?php  
+                      echo '<td> '.$i['tanggal_peminjaman'].'</td>';
+                      echo '<td>'.$i['tanggal_pengembalian'].'</td>';
+                      echo '<td>'.$i['jml_spd_anak'].'</td>';
+                      echo '<td>'.$i['jml_spd_standar'].'</td>';
+                      echo '<td>'.$i['jml_spd_gunung'].'</td>';
+                      echo '<td>'.$i['jml_spd_tandem'].'</td>';
+                      
+                      echo '<td>'.$i['biaya'].'</td>';
+                      echo '</tr>';
+
+                   }?>
+                </tbody>
+              </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>
@@ -218,6 +84,7 @@
     <!-- Bootstrap 3.3.2 JS -->
     <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- iCheck -->
+    <script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
     <script>
       $(function () {
@@ -226,6 +93,7 @@
           radioClass: 'iradio_square-blue',
           increaseArea: '20%' // optional
         });
+        $('#riwayatTable').DataTable();
       });
     </script>
     <!-- DATA TABES SCRIPT -->

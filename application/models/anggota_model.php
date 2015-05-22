@@ -31,8 +31,24 @@ class Anggota_model extends CI_Model {
            'status' => 'AKTIF'
         );
         $this->db->insert('anggota', $data);
+        if ($this->db->_error_message())
+        {
+            return 0;
+        }
         return 1;
     }
+    
+    function riwayat($noktp)
+    {
+       
+        $this->db->select('*');
+        $this->db->from('peminjaman');
+        $this->db->join('anggota', 'anggota.noktp = peminjaman.noktp');
+        $this->db->where('anggota.noktp', $noktp);
+        $query=$this->db->get(); 
+        return $query->result_array();
+    }
+
     function login($email,$password)
     {
         $query = $this->db->get_where('anggota', array('email' => $email,'password' => $password), 1);

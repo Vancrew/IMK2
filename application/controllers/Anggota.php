@@ -30,7 +30,7 @@ class Anggota extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('anggota/pendaftaran');
+		$this->load->view('anggota/masuk');
 	}
 	public function pendaftaran()
 	{
@@ -50,7 +50,13 @@ class Anggota extends CI_Controller {
 		$password=$_POST['password'];
 		$retval=$this->anggota_model->insert_entry($nama,$noktp,$alamat,$email,$telp,$password);
 		if($retval){
-			echo "sukses";
+			$arr = array('status' => "sukses");
+			echo json_encode($arr);
+		}
+		else
+		{
+			$arr = array('status' => "gagal");
+			echo json_encode($arr);
 		}
 	}
 	public function masuk()
@@ -59,15 +65,19 @@ class Anggota extends CI_Controller {
 	}
 	public function cek_login()
 	{
+		
 		$email=$_POST['email'];
 		$password=$_POST['password'];
 		$result=$this->anggota_model->login($email,$password);
 		if($result->num_rows()){
 			$array = array(
                    'email'  => $email,
-                   'logged_in' => TRUE
+                   'logged_in' => TRUE,
+                   'noktp' => $result->result()[0]->noktp,
+                   'nama' =>$result->result()[0]->nama
                );
-			$this->session->set_userdata($array);
+			$this->session->set_userdata('logged_in',$array);
+			
 			redirect('/anggota/riwayat');
 		}
 		else
@@ -84,7 +94,16 @@ class Anggota extends CI_Controller {
 	{
 		
 		if($this->session->userdata('logged_in')){
-			$this->load->view('anggota/riwayat');	
+			
+	        $session_data = $this->session->userdata('logged_in');
+	        $data['nama'] = $session_data['nama'];
+	        $data['noktp'] = $session_data['noktp'];
+	        
+	        $result=$this->anggota_model->riwayat($data['noktp']);
+	        $data['riwayat']=$result;
+	    
+
+			$this->load->view('anggota/riwayat',$data);	
 		}
 		else
 		{
