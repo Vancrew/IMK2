@@ -31,10 +31,10 @@ class Anggota_model extends CI_Model {
            'status' => 'AKTIF'
         );
         $this->db->insert('anggota', $data);
-        if ($this->db->_error_message())
-        {
-            return 0;
-        }
+        // if ($this->db->_error_message())
+        // {
+        //     return 0;
+        // }
         return 1;
     }
     
