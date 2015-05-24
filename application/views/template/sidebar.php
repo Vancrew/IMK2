@@ -47,7 +47,7 @@
     
     <div class="collapse" id="Data3">
    
-                <a class="list-group-item" href="<?php echo site_url('petugas/peminjaman');?>">Sepeda</a>                
+                <a class="list-group-item" href="<?php echo site_url('petugas/gudang_sepeda');?>">Sepeda</a>                
     </div>
     <?php } ?>
 
