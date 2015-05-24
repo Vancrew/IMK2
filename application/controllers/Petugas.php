@@ -93,6 +93,7 @@ class Petugas extends CI_Controller {
 	}
 	public function pendaftaran()
 	{
+		$this->load->view('template/header');
 		$this->load->view('petugas/pendaftaran');
 	}
 	public function pengembalian()

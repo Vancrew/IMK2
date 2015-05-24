@@ -11,6 +11,9 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url()."assets/css/select2-bootstrap.css"?>" />
 	<link href="<?php echo base_url(); ?>assets/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <!-- iCheck -->
+    <link href="<?php echo base_url(); ?>assets/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="<?php echo base_url()."assets/"?>js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url()."assets/"?>js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url()."assets/"?>js/scripts.js"></script>
@@ -25,7 +28,7 @@
 	    <script src="<?php echo $file; ?>"></script>
 	<?php endforeach; }?>
   </head>
-  <body style="padding-top:70px;">
+  <body style="padding-top:70px;" class="register-page">
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div>
 			<div class="col-md-12 column">
@@ -41,17 +44,18 @@
             			
             			if($data['hak']=='admin' || $data['hak']=='petugas'){?>
 					<li class="dropdown pull-right">
-						<a href="<?php echo site_url('petugas/log_out')?>">Logout</a>
+						<a href="<?php echo site_url('petugas/log_out')?>"><i class="fa fa-power-off"></i> Logout</a>
 					</li>
 					<?php }else { ?>
 					<li class="dropdown pull-right">
-						<a href="<?php echo site_url('anggota/log_out')?>">Logout</a>
+						<a href="<?php echo site_url('anggota/log_out')?>"><i class="fa fa-power-off"></i> Logout</a>
 					</li>
 					<?php } ?>
-					<?php }?>
+					
 					<li class="dropdown pull-right">
 						<a style="pointer-events: none;cursor: default;"><i class="fa fa-user fa-lg"> </i> <?php echo $data['user']; ?></a>
 					</li>
+					<?php }?>
 				</ul>
 			</div>
 		</div>
