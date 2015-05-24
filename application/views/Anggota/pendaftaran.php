@@ -58,7 +58,7 @@
           </div>
           <div class="form-group has-feedback">
             <input type="password" name="re" id="txtConfirmPassword" class="form-control" placeholder="Retype password" required/>
-            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
             <div class="col-xs-8">    
