@@ -32,6 +32,10 @@ class Anggota extends CI_Controller {
 	{
 		$this->load->view('anggota/index');
 	}
+	public function sepeda()
+	{
+		$this->load->view('anggota/sepeda');
+	}
 	public function pendaftaran()
 	{
 		$this->load->view('template/header');

@@ -50,25 +50,8 @@
 					<nav id="nav">
 						<ul>
 							<li class="current"><a href="<?php echo base_url(); ?>index.php/anggota/index">Halaman Utama</a></li>
-							<li class="submenu">
-								<a href="#">Peminjaman</a>
-								<ul>
-									<li><a href="left-sidebar.html">Peminjaman Sepeda</a></li>
-									<li><a href="right-sidebar.html">Riwayat Peminjaman</a></li>
-									
-									<li class="submenu">
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Dolore Sed</a></li>
-											<li><a href="#">Consequat</a></li>
-											<li><a href="#">Lorem Magna</a></li>
-											<li><a href="#">Sed Magna</a></li>
-											<li><a href="#">Ipsum Nisl</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="#" class="button special">Sign Up</a></li>
+							
+							<li><a href="<?php echo base_url(); ?>index.php/anggota/masuk" class="button special">Sign In</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -87,7 +70,7 @@
 						<header>
 							<h2>Sewa-Sepeda.com</h2>
 						</header>
-						<p>Merupakan Jasa Persweaan Sepeda <br>Terbesar Di Surabaya.
+						<p>Solusi Cerdas Bersepeda bersama patner anda!
 						</p>
 						<footer>
 							<ul class="buttons vertical">
@@ -121,11 +104,11 @@
 								<div class="6u 12u(narrower)">
 
 									<section>
-										<a href="#" class="image featured"><img src="<?php echo base_url(); ?>assets/images/pic01.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="<?php echo base_url(); ?>assets/images/city-bike.jpg" alt="" /></a>
 										<header>
-											<h3>Sepeda Perkotaan (City Bike)</h3>
+											<h3>Sepeda Standar (City Bike)</h3>
 										</header>
-										<p>Sepeda perkotaan atau city bike sengaja diciptakan untuk digunakan dijalan perkotaan yang mulus, beraspal, dan tidak ada bolong-bolongnya seperti jalan rusak. Fungsinya hanya sebatas untuk jalan-jalan sore sambil mengisi waktu luang. Wajar jika sepeda jenis ini tidak menggunakan suspensi karena memang tidak dirancang untuk menghadapi benturan.
+										<p>Sepeda Standar atau city bike sengaja diciptakan untuk digunakan dijalan perkotaan yang mulus, beraspal, dan tidak ada bolong-bolongnya seperti jalan rusak. Fungsinya hanya sebatas untuk jalan-jalan sore sambil mengisi waktu luang. Wajar jika sepeda jenis ini tidak menggunakan suspensi karena memang tidak dirancang untuk menghadapi benturan.
 										<br>Harga Peminjaman : Rp 25.000/hari</br>
 										</p>
 									</section>
@@ -134,9 +117,9 @@
 								<div class="6u 12u(narrower)">
 
 									<section>
-										<a href="#" class="image featured"><img src="<?php echo base_url(); ?>assets/images/pic02.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="<?php echo base_url(); ?>assets/images/sepedalintasalam.jpg" alt="" /></a>
 										<header>
-											<h3>Sepeda Lintas Alam (XC)</h3>
+											<h3>Sepeda Tandem (XC)</h3>
 										</header>
 										<p>Sepeda lintas alam atau XC (Baca: Cross Country) adalah sepeda yang dirancang untuk untuk lintas alam dengan medan ringan hingga sedang. Bisa dipakai di jalan perkotaan dan juga dipedesaan. Pada bagian depan, sepeda ini sudah menggunakan suspensi untuk meredam benturan-benturan ringan.<br>
 										<br>Harga Peminjaman : Rp 25.000/hari</br>
@@ -149,7 +132,7 @@
 
 							<footer class="major">
 								<ul class="buttons">
-									<li><a href="#" class="button">Telusuri Lebih Lanjut</a></li>
+									<li><a href="<?php echo base_url(); ?>index.php/anggota/sepeda" class="button">Telusuri Lebih Lanjut</a></li>
 								</ul>
 							</footer>
 
@@ -217,12 +200,12 @@
 				<section id="cta">
 
 					<header>
-						<h2>Berminat?</h2>
+						<h2>Berminat Jadi Member?</h2>
 						
 					</header>
 					<footer>
 						<ul class="buttons">
-							<li><a href="#" class="button special">Pinjam Sekarang</a></li>							
+							<li><a href="<?php echo base_url(); ?>index.php/anggota/peminjaman" class="button special">Daftar Sekarang</a></li>							
 						</ul>
 					</footer>
 
@@ -234,11 +217,15 @@
 						<h2>Hubungi Kami</h2>
 						
 					</header>
-
+						<p><a href="#" class="icon circle fa-phone"><span class="label">Phone</span></a>Telepon : +6231-8090-8182
+							<br><a href="#" class="icon circle fa-map-marker"><span class="label">Map</span></a>Alamat : Jl.Bukit Golf 21 Citraland Surabaya
+						</p>
 					<ul class="icons">
 						<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>						
+						<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+						<li></li>
+
 					</ul>
 
 					<ul class="copyright">
