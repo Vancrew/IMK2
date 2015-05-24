@@ -14,6 +14,7 @@
     <link href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
     <link href="<?php echo base_url(); ?>assets/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
+
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,7 +36,7 @@
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
            <div class="form-group has-feedback">
-            <input type="text" class="form-control" id="noktp" name="noktp" placeholder="Nomor KTP" required/>
+            <input type="text" class="form-control " id="noktp" name="noktp" placeholder="Nomor KTP" required/>
             <span class="glyphicon glyphicon-credit-card form-control-feedback"></span>
           </div>
            <div class="form-group has-feedback">
@@ -68,15 +69,12 @@
             </div><!-- /.col -->
           </div>
         </form>        
-        <a href="masuk" class="text-center">Sudah Punya Akun?</a>
+        <a href="<?php echo site_url(); ?>/anggota/masuk" class="text-center">Sudah Punya Akun?</a>
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
 
-    <!-- jQuery 2.1.4 -->
-    <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- Bootstrap 3.3.2 JS -->
-    <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>assets/js/bootbox.min.js" type="text/javascript"></script>
+    <!-- jQuery 2.1.4 --
+    
     <!-- iCheck -->
     <!--<script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js" type="text/javascript"></script>-->
     
@@ -90,8 +88,55 @@
         $(document).ready(function () {
            $("#txtConfirmPassword").keyup(checkPasswordMatch);
         })
+         $('#daftar input').tooltipster({
+            trigger: 'custom',
+            onlyOne: false,
+            position: 'right'
+        });
+         $('#daftar').validate({ // initialize the plugin
+            errorPlacement: function (error, element) {
+                var lastError = $(element).data('lastError'),
+                    newError = $(error).text();
+                
+                $(element).data('lastError', newError);
+                                
+                if(newError !== '' && newError !== lastError){
+                    $(element).tooltipster('content', newError);
+                    $(element).tooltipster('show');
+                }
+            },
+            success: function (label, element) {
+                $(element).tooltipster('hide');
+            },
+            rules: {
+                nama: {
+                    required: true
+                },
+                noktp: {
+                    required: true,
+                    minlength: 16,
+                    digits: true,
+                    maxlength: 16
+                },
+                alamat:{
+                    required:true
+                },
+                email: {
+                    required:true,
+                    email:true
+                },
+                telp: {
+                  required: true,
+                  minlength: 9,
+                  digits: true,
+                  maxlength: 12
+                }
+            }
+        });
+
         $('#submit').click(function(e){
           e.preventDefault();
+          if(!$('#daftar').valid())return;
           var message2="<div class='row'><div class='col-md-12'> \
                         <div class='col-md-3'> \
                                     \
@@ -207,5 +252,7 @@
         }
       });
     </script>
+    
+
   </body>
 </html>

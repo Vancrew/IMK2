@@ -9,15 +9,23 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url()."assets/css/style.css"?>" />
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url()."assets/css/bootstrap-theme.min.css"?>" />
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url()."assets/css/select2-bootstrap.css"?>" />
+	<link type="text/css" rel="stylesheet" href="<?php echo base_url()."assets/css/tooltips.css"?>" />
 	<link href="<?php echo base_url(); ?>assets/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
     <link href="<?php echo base_url(); ?>assets/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="<?php echo base_url()."assets/"?>js/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url()."assets/"?>js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url()."assets/"?>js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url()."assets/"?>js/scripts.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+	<script src="<?php echo base_url(); ?>assets/js/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>assets/js/additional-methods.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/bootbox.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>assets/js/tooltipster.js"></script>
+
+	
 	<?php if(isset($css_files)){
 	foreach($css_files as $file): ?>
 	    <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
