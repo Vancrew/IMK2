@@ -10,7 +10,7 @@
     ?>
 
     <?php if($data['hak']=="admin"){ ?>
-    <a href="#pengelolaan_admin" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Pengelolaan Data</a>
+    <a href="#pengelolaan_admin" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-database"> </i> Pengelolaan Data</a>
     
     <div class="collapse" id="pengelolaan_admin">
    
@@ -22,7 +22,7 @@
 
    
 
-    <a href="#Laporan" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Laporan</a>
+    <a href="#Laporan" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-file-text"></i> Laporan</a>
     
     <div class="collapse" id="Laporan">
    
@@ -33,7 +33,7 @@
     <?php } ?>
 
     <?php if($data['hak']=="petugas" || $data['hak']=="admin"){ ?>
-    <a href="#Transaksi" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Transaksi</a>
+    <a href="#Transaksi" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-credit-card"></i> Transaksi</a>
     
     <div class="collapse" id="Transaksi">
    
