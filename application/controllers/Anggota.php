@@ -30,7 +30,7 @@ class Anggota extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('anggota/masuk');
+		$this->load->view('anggota/index');
 	}
 	public function pendaftaran()
 	{
