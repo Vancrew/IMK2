@@ -48,10 +48,11 @@
 						<a href="<?php echo site_url('anggota/log_out')?>">Logout</a>
 					</li>
 					<?php } ?>
-					<?php }?>
+					
 					<li class="dropdown pull-right">
 						<a style="pointer-events: none;cursor: default;"><i class="fa fa-user fa-lg"> </i> <?php echo $data['user']; ?></a>
 					</li>
+					<?php }?>
 				</ul>
 			</div>
 		</div>
