@@ -43,11 +43,21 @@
     <?php } ?>
 
     <?php if($data['hak']=="petugas"){ ?>
-    <a href="#Data3" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Pengelolaan Data</a>
+    <a href="#Data3" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-database"> </i> Pengelolaan Data</a>
     
     <div class="collapse" id="Data3">
    
                 <a class="list-group-item" href="<?php echo site_url('petugas/gudang_sepeda');?>">Sepeda</a>                
+    </div>
+    <?php } ?>
+
+    <?php if($data['hak']=="anggota"){ ?>
+    <a href="#Data4" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-credit-card"> </i> Transaksi</a>
+    
+    <div class="collapse" id="Data4">
+   
+                <a class="list-group-item" href="<?php echo site_url('anggota/reservasi');?>">Resevasi</a>
+                <a class="list-group-item" href="<?php echo site_url('anggota/riwayat');?>">Riwayat Peminjaman</a>                
     </div>
     <?php } ?>
 

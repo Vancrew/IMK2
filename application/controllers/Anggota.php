@@ -100,6 +100,7 @@ class Anggota extends CI_Controller {
 	}
 	public function riwayat()
 	{
+
 		
 		if($this->session->userdata('logged_in')){
 			
@@ -121,7 +122,23 @@ class Anggota extends CI_Controller {
 	}
 	public function reservasi()
 	{
-		$this->load->view('anggota/reservasi');	
+		if($this->session->userdata('logged_in')){
+			
+	        $session_data = $this->session->userdata('logged_in');
+	        $data['user'] = $session_data['nama'];
+	        $data['noktp'] = $session_data['noktp'];
+	        
+	        $result=$this->anggota_model->riwayat($data['noktp']);
+	        $data['riwayat']=$result;
+	    
+	        $this->load->view('template/header');
+	        $this->load->view('template/sidebar');		
+			$this->load->view('anggota/reservasi',$data);	
+		}
+		else
+		{
+			redirect('/anggota/masuk');
+		}
 	}
 
 }
