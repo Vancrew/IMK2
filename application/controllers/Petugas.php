@@ -115,6 +115,7 @@ class Petugas extends CI_Controller {
 		if($retval){
 			$arr = array('status' => "sukses");
 			echo json_encode($arr);
+			echo 'id peminjaman = ' . $id_peminjaman;
 		}
 		else
 		{
