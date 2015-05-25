@@ -33,16 +33,49 @@ class Petugas_model extends CI_Model {
         $this->db->insert('anggota', $data);
         return 1;
     }
-    function pinjam_sepeda($tanggal_peminjaman,$noktp,$tanggal_pengembalian,$jml_spd_anak,$jml_spd_standar,$jml_spd_gunung,$jml_spd_tandem,$status)
+    function check_id(){
+      $q='select id_peminjaman from peminjaman order by id_peminjaman desc limit 1';
+
+      $succ = $this->db->query($q);
+
+      if($succ->num_rows()==1){
+        foreach ($succ->result() as $row)
+        {
+          $id_num_str = substr($row->id_peminjaman,1);
+          $id_num = (int)$id_num_str;
+          $id_num=$id_num+1;
+
+          if($id_num<10){
+            $id_new='P' . '000' . $id_num;
+          }
+          elseif ($id_num<100) {
+            $id_new='P' . '00' . $id_num;
+          }
+          elseif ($id_num<1000) {
+            $id_new='P' . '0' . $id_num;
+          }
+          elseif ($id_num<10000) {
+            $id_new='P' . $id_num;
+          }
+        }
+      } else{
+        $id_new='P0001';
+      }
+      return $id_new;
+    }
+
+    function pinjam_sepeda($id_peminjaman,$noktp,$tanggal_peminjaman,$tanggal_pengembalian,$jml_spd_anak,$jml_spd_standar,$jml_spd_gunung,$jml_spd_tandem,$biaya,$status)
     {
         $data = array(
-           'tanggal_peminjaman' => $tanggal_peminjaman ,
+           'id_peminjaman' => $id_peminjaman,
            'noktp' => $noktp ,
+           'tanggal_peminjaman' => $tanggal_peminjaman ,
            'tanggal_pengembalian' => $tanggal_pengembalian,
            'jml_spd_anak' => $jml_spd_anak,
            'jml_spd_standar' =>$jml_spd_standar,
            'jml_spd_gunung' =>$jml_spd_gunung,
            'jml_spd_tandem' =>$jml_spd_tandem,
+           'biaya' =>$biaya,
            'status' => $status
         );
         $this->db->insert('peminjaman', $data);

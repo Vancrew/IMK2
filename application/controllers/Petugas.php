@@ -91,6 +91,34 @@ class Petugas extends CI_Controller {
 		$this->load->view('template/sidebar');
 		$this->load->view('petugas/peminjaman');
 	}
+
+	public function pinjam()
+	{
+		$id_p['new']=$this->petugas_model->check_id();
+
+		$id_peminjaman=$id_p['new'];
+		$tanggal_peminjaman="2015-05-12";
+		$tanggal_pengembalian="2015-05-13";
+		$noktp=$_POST['noktp'];
+		$jml1=$_POST['jml1'];
+		$jml2=$_POST['jml2'];
+		$jml3=$_POST['jml3'];
+		$jml4=$_POST['jml4'];
+		//$biaya=$_POST['biaya'];
+		$biaya="20000";
+		$status="pinjam";
+		$retval=$this->petugas_model->pinjam_sepeda($id_peminjaman,$noktp,$tanggal_peminjaman,$tanggal_pengembalian,$jml1,$jml2,$jml3,$jml4,$biaya,$status);
+		if($retval){
+			$arr = array('status' => "sukses");
+			echo json_encode($arr);
+		}
+		else
+		{
+			$arr = array('status' => "gagal");
+			echo json_encode($arr);
+		}
+	}
+
 	public function pendaftaran()
 	{
 		$this->load->view('template/header');
