@@ -115,7 +115,6 @@ class Petugas extends CI_Controller {
 		if($retval){
 			$arr = array('status' => "sukses");
 			echo json_encode($arr);
-			echo 'id peminjaman = ' . $id_peminjaman;
 			redirect(site_url().'/petugas/peminjaman?status=sukses&id='.$id_peminjaman);
 		}
 		else
@@ -140,7 +139,7 @@ class Petugas extends CI_Controller {
 	}
 	public function masuk()
 	{
-
+		$this->load->view('template/header');
 		$this->load->view('petugas/masuk');
 	}
 
