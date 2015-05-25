@@ -109,8 +109,11 @@ class Petugas extends CI_Controller {
 		$jml2=$_POST['jml2'];
 		$jml3=$_POST['jml3'];
 		$jml4=$_POST['jml4'];
-		//$biaya=$_POST['biaya'];
-		$biaya="20000";
+		$biaya=$_POST['biaya'];
+		echo "string";
+		echo $biaya;
+		echo "string";
+		//$biaya="20000";
 		$status="pinjam";
 		$retval=$this->petugas_model->pinjam_sepeda($id_peminjaman,$noktp,$tanggal_peminjaman,$tanggal_pengembalian,$jml1,$jml2,$jml3,$jml4,$biaya,$status);
 		if($retval){

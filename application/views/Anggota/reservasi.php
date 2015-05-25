@@ -45,7 +45,7 @@
   <body class="register-page">
     <section class="content" align="center">
     <div id="successMessage"class="alert alert-success alert-dismissible" style="display:none;"role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Peminjaman Berhasil!</strong> Terima kasih telah meminjam.</div>
+  <strong>Resevasi Berhasil!</strong> Terima kasih telah meminjam.</div>
           <div class="row">
             <!-- left column -->
 
@@ -55,15 +55,15 @@
               <!-- general form elements -->
              <div class="box box-primary">
                 <div class="box-header" align="center">
-                  <h3 class="box-title">Isi Data Peminjaman</h3>
+                  <h3 class="box-title">Isi Data Reservasi</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form form id="pinjam" action="<?php echo base_url(); ?>index.php/petugas/pinjam" method="post">
+                <form form id="reservasi" action="<?php echo base_url(); ?>index.php/anggota/booking" method="post">
                   <div class="box-body">
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Nomor KTP</label>
-                      <input type="text" class="form-control" id="noktp" name="noktp" placeholder="Masukan Nomor KTP Anda" required>
+                      <input type="text" class="form-control" id="noktp" name="noktp" value='<?php echo $noktp; ?>'  readonly>
                     </div>
 
                     <div class="form-group">
@@ -158,7 +158,7 @@
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Biaya</label>
-                      <input type="text" class="form-control" id="biaya" name="biaya" value="0" disabled="">
+                      <input type="text" class="form-control" id="biaya" name="biaya" value="0" readonly="">
                     </div>
 
                     <div class="row">

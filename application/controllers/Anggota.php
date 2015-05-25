@@ -123,14 +123,53 @@ class Anggota extends CI_Controller {
 	public function reservasi()
 	{
 		if($this->session->userdata('logged_in')){
+
+			$session_data = $this->session->userdata('logged_in');
+	        $data['user'] = $session_data['nama'];
+	        $data['noktp'] = $session_data['noktp'];
 	    
 	        $this->load->view('template/header');
 	        $this->load->view('template/sidebar');		
-			$this->load->view('anggota/reservasi');	
+			$this->load->view('anggota/reservasi',$data);	
 		}
 		else
 		{
 			redirect('/anggota/masuk');
+		}
+	}
+
+	public function booking()
+	{
+		$id_p['new']=$this->petugas_model->check_id();
+		$reservation  = $_POST['reservation'];
+		$tanggal = explode(" - ", $reservation);
+		
+		$t1 = explode("/", $tanggal[0]);
+		$t2 = explode("/", $tanggal[1]);
+
+		$id_peminjaman=$id_p['new'];
+		$tanggal_peminjaman=$t1[2] . '-' . $t1[0] . '-' . $t1[1];
+		$tanggal_pengembalian=$t2[2] . '-' . $t2[0] . '-' . $t2[1];
+		$noktp=$_POST['noktp'];
+		$jml1=$_POST['jml1'];
+		$jml2=$_POST['jml2'];
+		$jml3=$_POST['jml3'];
+		$jml4=$_POST['jml4'];
+		$biaya=$_POST['biaya'];
+		echo "string";
+		echo $biaya;
+		echo "string";
+		//$biaya="20000";
+		$status="pinjam";
+		$retval=$this->petugas_model->pinjam_sepeda($id_peminjaman,$noktp,$tanggal_peminjaman,$tanggal_pengembalian,$jml1,$jml2,$jml3,$jml4,$biaya,$status);
+		if($retval){
+			$arr = array('status' => "sukses");
+			echo json_encode($arr);
+		}
+		else
+		{
+			$arr = array('status' => "gagal");
+			echo json_encode($arr);
 		}
 	}
 

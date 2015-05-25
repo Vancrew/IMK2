@@ -158,7 +158,7 @@
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Biaya</label>
-                      <input type="text" class="form-control" id="biaya" name="biaya" value="0" disabled="">
+                      <input type="text" class="form-control" id="biaya" name="biaya" value="0" readonly>
                     </div>
 
                     <div class="row">
