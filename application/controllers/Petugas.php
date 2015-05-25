@@ -95,10 +95,15 @@ class Petugas extends CI_Controller {
 	public function pinjam()
 	{
 		$id_p['new']=$this->petugas_model->check_id();
+		$reservation  = $_POST['reservation'];
+		$tanggal = explode(" - ", $reservation);
+		
+		$t1 = explode("/", $tanggal[0]);
+		$t2 = explode("/", $tanggal[1]);
 
 		$id_peminjaman=$id_p['new'];
-		$tanggal_peminjaman="2015-05-12";
-		$tanggal_pengembalian="2015-05-13";
+		$tanggal_peminjaman=$t1[2] . '-' . $t1[0] . '-' . $t1[1];
+		$tanggal_pengembalian=$t2[2] . '-' . $t2[0] . '-' . $t2[1];
 		$noktp=$_POST['noktp'];
 		$jml1=$_POST['jml1'];
 		$jml2=$_POST['jml2'];
