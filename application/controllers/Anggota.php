@@ -140,7 +140,7 @@ class Anggota extends CI_Controller {
 
 	public function booking()
 	{
-		$id_p['new']=$this->petugas_model->check_id();
+		$id_p['new']=$this->anggota_model->check_id();
 		$reservation  = $_POST['reservation'];
 		$tanggal = explode(" - ", $reservation);
 		
@@ -161,7 +161,7 @@ class Anggota extends CI_Controller {
 		echo "string";
 		//$biaya="20000";
 		$status="pinjam";
-		$retval=$this->petugas_model->pinjam_sepeda($id_peminjaman,$noktp,$tanggal_peminjaman,$tanggal_pengembalian,$jml1,$jml2,$jml3,$jml4,$biaya,$status);
+		$retval=$this->anggota_model->booking_sepeda($id_peminjaman,$noktp,$tanggal_peminjaman,$tanggal_pengembalian,$jml1,$jml2,$jml3,$jml4,$biaya,$status);
 		if($retval){
 			$arr = array('status' => "sukses");
 			echo json_encode($arr);

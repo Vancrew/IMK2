@@ -62,6 +62,53 @@ class Anggota_model extends CI_Model {
 
         $this->db->update('entries', $this, array('id' => $_POST['id']));
     }
+    function check_id(){
+      $q='select id_peminjaman from peminjaman order by id_peminjaman desc limit 1';
+
+      $succ = $this->db->query($q);
+
+      if($succ->num_rows()==1){
+        foreach ($succ->result() as $row)
+        {
+          $id_num_str = substr($row->id_peminjaman,1);
+          $id_num = (int)$id_num_str;
+          $id_num=$id_num+1;
+
+          if($id_num<10){
+            $id_new='B' . '000' . $id_num;
+          }
+          elseif ($id_num<100) {
+            $id_new='B' . '00' . $id_num;
+          }
+          elseif ($id_num<1000) {
+            $id_new='B' . '0' . $id_num;
+          }
+          elseif ($id_num<10000) {
+            $id_new='B' . $id_num;
+          }
+        }
+      } else{
+        $id_new='B0001';
+      }
+      return $id_new;
+    }
+    function booking_sepeda($id_peminjaman,$noktp,$tanggal_peminjaman,$tanggal_pengembalian,$jml_spd_anak,$jml_spd_standar,$jml_spd_gunung,$jml_spd_tandem,$biaya,$status)
+    {
+        $data = array(
+           'id_peminjaman' => $id_peminjaman,
+           'noktp' => $noktp ,
+           'tanggal_peminjaman' => $tanggal_peminjaman ,
+           'tanggal_pengembalian' => $tanggal_pengembalian,
+           'jml_spd_anak' => $jml_spd_anak,
+           'jml_spd_standar' =>$jml_spd_standar,
+           'jml_spd_gunung' =>$jml_spd_gunung,
+           'jml_spd_tandem' =>$jml_spd_tandem,
+           'biaya' =>$biaya,
+           'status' => $status
+        );
+        $this->db->insert('peminjaman', $data);
+        return 1;
+    }
 
 }
 
