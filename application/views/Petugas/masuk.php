@@ -52,8 +52,6 @@
           </div>
         </form>        
 
-
-        <a href="pendaftaran" class="text-center">Belum Punya Akun?</a>
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
 
