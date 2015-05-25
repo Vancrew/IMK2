@@ -110,10 +110,6 @@ class Petugas extends CI_Controller {
 		$jml3=$_POST['jml3'];
 		$jml4=$_POST['jml4'];
 		$biaya=$_POST['biaya'];
-		echo "string";
-		echo $biaya;
-		echo "string";
-		//$biaya="20000";
 		$status="pinjam";
 		$retval=$this->petugas_model->pinjam_sepeda($id_peminjaman,$noktp,$tanggal_peminjaman,$tanggal_pengembalian,$jml1,$jml2,$jml3,$jml4,$biaya,$status);
 		if($retval){
@@ -127,10 +123,11 @@ class Petugas extends CI_Controller {
 		}
 	}
 
-	public function pendaftaran()
+	public function reservasi()
 	{
 		$this->load->view('template/header');
-		$this->load->view('petugas/pendaftaran');
+		$this->load->view('template/sidebar');
+		$this->load->view('petugas/reservasi');
 	}
 	public function pengembalian()
 	{

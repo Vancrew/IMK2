@@ -44,127 +44,31 @@
   </head>
   <body class="register-page">
     <section class="content" align="center">
-    <div id="successMessage"class="alert alert-success alert-dismissible" style="display:none;"role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Peminjaman Berhasil!</strong> Terima kasih telah meminjam.</div>
           <div class="row">
             <!-- left column -->
 
-            <div class="col-md-2"></div>
-            
+            <div class="col-md-4"></div>
             <div class="col-md-4">
               <!-- general form elements -->
              <div class="box box-primary">
                 <div class="box-header" align="center">
-                  <h3 class="box-title">Isi Data Peminjaman</h3>
+                  <h3 class="box-title">Reservasi Sepeda</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form form id="pinjam" action="<?php echo base_url(); ?>index.php/petugas/pinjam" method="post">
+                <form role="form">
                   <div class="box-body">
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Nomor KTP</label>
-                      <input type="text" class="form-control" id="noktp" name="noktp" placeholder="Masukan Nomor KTP Anda" required>
+                      <label for="exampleInputEmail1">Kode Reservasi</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Kode Reservasi Anda" required>
                     </div>
 
-                    <div class="form-group">
-                      <label>Tanggal Peminjaman</label>
-                      <div class="input-group">
-                        <div class="input-group-addon">
-                          <i class="fa fa-calendar"></i>
-                        </div>
-                        <input type="text" class="form-control pull-right" id="reservation" name="reservation" placeholder="Tanggal Peminjaman Sepeda" required/>
-                      </div><!-- /.input group -->
-                    </div><!-- /.form group -->
-              
-                    <div class="form-group">
-                      <label>Jumlah Sepeda</label>
-                      <div class="row">
-                        <div class="col-xs-6">
-                          <label class="">Sepeda Anak - Anak</label>
-                          <p class="help-block">Rp 25.000/sepeda/hari</p>
-                          <select class="form-control" id="jml1" name="jml1">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                          </select>
-                        </div>
-              
-                        <div class="col-xs-6">
-                          <label class="">Sepeda Standar</label>
-                          <p class="help-block">Rp 50.000/sepeda/hari</p>
-                          <select class="form-control" id="jml2" name="jml2">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-xs-6">
-                          <label class="">Sepeda Gunung</label>
-                          <p class="help-block">Rp 75.000/sepeda/hari</p>
-                          <select class="form-control" id="jml3" name="jml3">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                          </select>
-                        </div>
-              
-                        <div class="col-xs-6">
-                          <label class="">Sepeda Tandem</label>
-                          <p class="help-block">Rp 100.000/sepeda/hari</p>
-                          <select class="form-control" id="jml4" name="jml4">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div><!-- /.box-body -->
-                 
-
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Biaya</label>
-                      <input type="text" class="form-control" id="biaya" name="biaya" value="0" readonly>
-                    </div>
+                   
 
                     <div class="row">
-                      <div class="col-xs-9"> <a href="reservasi" class="text-center">Pengguna Sudah Reservasi?</a></div>
+                      <div> </div>
                       <div class="col-xs-3">
-                        <button type="submit" class="btn btn-primary">Pinjam</button>  
+                        <button type="submit" class="btn btn-primary">Submit</button>  
                       </div>
                     </div>
 

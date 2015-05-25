@@ -59,8 +59,8 @@
                   <div class="box-body">
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Nomor KTP</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nomor KTP Anda" required>
+                      <label for="exampleInputEmail1">Kode Peminjaman / Reservasi</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Kode Peminjaman / Reservasi Anda" required>
                     </div>
 
                    

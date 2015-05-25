@@ -36,7 +36,8 @@
     <a href="#Transaksi" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-credit-card"></i> Transaksi</a>
     
     <div class="collapse" id="Transaksi">
-   
+                
+                <a class="list-group-item" href="<?php echo site_url('petugas/reservasi');?>">Reservasi</a>
                 <a class="list-group-item" href="<?php echo site_url('petugas/peminjaman');?>">Peminjaman</a>
                  <a class="list-group-item" href="<?php echo site_url('petugas/pengembalian')?>">Pengembalian</a>
     </div>
