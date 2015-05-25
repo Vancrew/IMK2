@@ -54,6 +54,10 @@
             <div class="col-md-4">
               <!-- general form elements -->
              <div class="box box-primary">
+             <?php if(isset($_GET['status']) && $_GET['status']=='sukses'){ ?>
+                <div id="successMessage"class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <strong>Reservasi Berhasil! ID Reservasi = <?php echo $_GET['id'] ?> </strong></div>
+                <?php } ?>
                 <div class="box-header" align="center">
                   <h3 class="box-title">Isi Data Reservasi</h3>
                 </div><!-- /.box-header -->

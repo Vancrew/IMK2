@@ -161,12 +161,13 @@ class Anggota extends CI_Controller {
 		if($retval){
 			$arr = array('status' => "sukses");
 			echo json_encode($arr);
-			echo 'id reservasi = ' . $id_peminjaman;
+			redirect(site_url().'/anggota/reservasi?status=sukses&id='.$id_peminjaman);
 		}
 		else
 		{
 			$arr = array('status' => "gagal");
 			echo json_encode($arr);
+			redirect(site_url().'/anggota/reservasi?status=gagal');
 		}
 	}
 

@@ -75,20 +75,21 @@ class Anggota_model extends CI_Model {
           $id_num=$id_num+1;
 
           if($id_num<10){
-            $id_new='B' . '000' . $id_num;
+            $id_new='P' . '000' . $id_num;
           }
           elseif ($id_num<100) {
-            $id_new='B' . '00' . $id_num;
+            $id_new='P' . '00' . $id_num;
           }
           elseif ($id_num<1000) {
-            $id_new='B' . '0' . $id_num;
+            $id_new='P' . '0' . $id_num;
           }
           elseif ($id_num<10000) {
-            $id_new='B' . $id_num;
+            $id_new='P' . $id_num;
           }
+          break;
         }
       } else{
-        $id_new='B0001';
+        $id_new='P0001';
       }
       return $id_new;
     }

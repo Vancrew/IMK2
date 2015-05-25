@@ -116,11 +116,13 @@ class Petugas extends CI_Controller {
 			$arr = array('status' => "sukses");
 			echo json_encode($arr);
 			echo 'id peminjaman = ' . $id_peminjaman;
+			redirect(site_url().'/petugas/peminjaman?status=sukses&id='.$id_peminjaman);
 		}
 		else
 		{
 			$arr = array('status' => "gagal");
 			echo json_encode($arr);
+			redirect(site_url().'/petugas/peminjaman?status=gagal');
 		}
 	}
 
