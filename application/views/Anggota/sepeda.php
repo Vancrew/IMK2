@@ -77,8 +77,8 @@
 										
 										<p>Sepeda Standar atau city bike sengaja diciptakan untuk digunakan dijalan perkotaan yang mulus, beraspal, dan tidak ada bolong-bolongnya seperti jalan rusak. Fungsinya hanya sebatas untuk jalan-jalan sore sambil mengisi waktu luang. Wajar jika sepeda jenis ini tidak menggunakan suspensi karena memang tidak dirancang untuk menghadapi benturan.
 										<br>
-										<br>Harga Peminjaman : Rp 25.000/hari
-										<br>Deposit Minimal : 6 Loot
+										<br>Harga Peminjaman : Rp 50.000/hari
+										<br>Deposit Minimal : 4 Loot
 										</p>
 									</section>
 
@@ -92,8 +92,8 @@
 										
 										<p>Sepeda lintas alam atau XC (Baca: Cross Country) adalah sepeda yang dirancang untuk untuk lintas alam dengan medan ringan hingga sedang. Bisa dipakai di jalan perkotaan dan juga dipedesaan. Pada bagian depan, sepeda ini sudah menggunakan suspensi untuk meredam benturan-benturan ringan.<br>
 										<br>
-										<br>Harga Peminjaman : Rp 75.000/hari
-										<br>Deposit Minimal : 12 Loot
+										<br>Harga Peminjaman : Rp 100.000/hari
+										<br>Deposit Minimal : 8 Loot
 										</p>
 									</section>
 
@@ -112,8 +112,8 @@
 										<br>
 										<br>
 
-										<br>Harga Peminjaman : Rp 15.000/hari
-										<br>Deposit Minimal : 4 Loot
+										<br>Harga Peminjaman : Rp 25.000/hari
+										<br>Deposit Minimal : 2 Loot
 										</p>
 									</section>
 
@@ -128,8 +128,8 @@
 										
 										<p>Sepeda yang sangat cocok digunakan untuk anda yang akan menempuh medan pegunungan. Sepeda ini di desain lebih ringan dan memiliki tingkat keseimbangan yang tinggi yang memudahkan anda melewati rintangan pegunungan.
 										<br>
-										<br>Harga Peminjaman : Rp 50.000/hari
-										<br>Deposit Minimal : 10 Loot
+										<br>Harga Peminjaman : Rp 75.000/hari
+										<br>Deposit Minimal : 6 Loot
 										</p>
 									</section>
 
