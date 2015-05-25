@@ -90,7 +90,7 @@
 						<h2>Tentang Kami
 						</h2>
 						<p>Merupakan jasa persewaan sepeda yang berlokasi di daerah Citraland - Surabaya Barat.
-						<br> Kami Menyediakan berbagai macam sepeda mulai dari sepeda untuk anak-anak sampai sepeda gunung.</br><br> Jasa persewaan ini sangat memudahkan anda untuk berekreasi menggunakan sepeda dengan keluarga,</br>rekan kerja ataupun eventual yang akan anda ikuti. Klik <a href="http://html5up.net/license">Disini </a> Untuk bergabung bersama kami!</p>
+						<br> Kami Menyediakan berbagai macam sepeda mulai dari sepeda untuk anak-anak sampai sepeda gunung.</br><br> Jasa persewaan ini sangat memudahkan anda untuk berekreasi menggunakan sepeda dengan keluarga,</br>rekan kerja ataupun eventual yang akan anda ikuti. Klik <a href="<?php echo base_url(); ?>index.php/anggota/pendaftaran">Disini </a> Untuk bergabung bersama kami!</p>
 					</header>
 
 
@@ -205,7 +205,7 @@
 					</header>
 					<footer>
 						<ul class="buttons">
-							<li><a href="<?php echo base_url(); ?>index.php/anggota/peminjaman" class="button special">Daftar Sekarang</a></li>							
+							<li><a href="<?php echo base_url(); ?>index.php/anggota/pendaftaran" class="button special">Daftar Sekarang</a></li>							
 						</ul>
 					</footer>
 
