@@ -1,66 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Peminjaman Sepeda | Pendaftaran Anggota</title>
-    <!-- Bootstrap 3.3.4 -->
-    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
-    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- daterange picker -->
-    <link href="<?php echo base_url(); ?>assets/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
-    <!-- iCheck for checkboxes and radio inputs -->
-    <link href="<?php echo base_url(); ?>assets/plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
-    <!-- Bootstrap Color Picker -->
-    <link href="<?php echo base_url(); ?>assets/plugins/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet"/>
-    <!-- Bootstrap time Picker -->
-    <link href="<?php echo base_url(); ?>assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet"/>
-    <!-- AdminLTE Skins. Choose a skin from the css/skins 
-         folder instead of downloading all of them to reduce the load. -->
-    <link href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <link href="<?php echo base_url(); ?>assets/plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
 
-    <SCRIPT language="javascript" type="text/javascript" src="<?php echo base_url(); ?>assets/ckck.js">
-    </script>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.4 -->
-    <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <link href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <!-- iCheck -->
-    <link href="<?php echo base_url(); ?>assets/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
   <body class="register-page">
     <section class="content" align="center">
           <div class="row">
             <!-- left column -->
-
-            <div class="col-md-4"></div>
+            
+            <div class="col-md-2"></div>
             <div class="col-md-4">
               <!-- general form elements -->
+              <?php if(isset($_GET['status']) && $_GET['status']=='gagal'){ ?>
+              <div id="successMessage"class="alert  alert-dismissible" style="background-color:#FF4545;"role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <strong>Pengembalian Gagal !</strong>Cek kembali id reservasi anda.</div>
+            <?php } ?>
+            <?php if(isset($_GET['status']) && $_GET['status']=='sukses'){ ?>
+              <div id="successMessage"class="alert  alert-dismissible" style="background-color:#009933;"role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <strong>Pengembalian berhasil !</strong>Terimakasih telah melakukan peminjaman.</div>
+            <?php } ?>
              <div class="box box-primary">
+
                 <div class="box-header" align="center">
                   <h3 class="box-title">Pengembalian Sepeda</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                <form role="form" method="post" action="<?php echo site_url().'/petugas/kembali'; ?>">
                   <div class="box-body">
 
                     <div class="form-group">
                       <label for="exampleInputEmail1">Kode Peminjaman / Reservasi</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan Kode Peminjaman / Reservasi Anda" required>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="id_reservasi" placeholder="Masukan Kode Peminjaman / Reservasi Anda" required>
                     </div>
 
                    
