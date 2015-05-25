@@ -140,10 +140,20 @@ class Petugas extends CI_Controller {
 	public function tampilkan_data_sepeda()
 	{
 		$id_reservasi=$_POST['id_reservasi'];
-		$id=explode("0", $id_reservasi)[count(explode("0", $id_reservasi))-1];
-		$result=$this->petugas_model->tampilkan_data_sepeda($id);
+		$data['mode']=$_POST['mode'];
+		//$id=explode("0", $id_reservasi)[count(explode("0", $id_reservasi))-1];
+		$result=$this->petugas_model->tampilkan_data_sepeda($id_reservasi);
 		$data['result']=$result;
-		$data['mode']='kembali';
+		//$data['mode']='kembali';
+		//print_r($result);
+		if(count($result)<1){
+			if($data['mode']=="kembali"){
+				redirect('petugas/pengembalian?status=gagal');
+			}
+			else {
+				redirect('petugas/reservasi?status=gagal');
+			}
+		}
 		$this->load->view('template/header');
 		$this->load->view('template/sidebar');
 		$this->load->view('petugas/tampilkan_data_sepeda',$data);
@@ -167,6 +177,27 @@ class Petugas extends CI_Controller {
 		else
 		{
 			redirect('petugas/pengembalian');
+		}
+	}
+	public function booking()
+	{
+		if(isset($_POST['id_reservasi']))
+		{
+			$id_reservasi=$_POST['id_reservasi'];
+			// $id=explode("0", $id_reservasi)[count(explode("0", $id_reservasi))-1];
+			$retval=$this->petugas_model->booking_sepeda($id_reservasi);
+			if($retval>0)
+			{
+				redirect('petugas/reservasi?status=sukses');
+			}
+			else
+			{
+				redirect('petugas/reservasi?status=gagal');
+			}
+		}
+		else
+		{
+			redirect('petugas/reservasi');
 		}
 	}
 	public function masuk()

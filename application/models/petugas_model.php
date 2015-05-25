@@ -73,11 +73,22 @@ class Petugas_model extends CI_Model {
       $this->db->update('peminjaman', $data);
       return $this->db->affected_rows();
     }
+     function booking_sepeda($id_peminjaman)
+    {
+      $data = array(
+               'status' => 'pinjam'
+            );
+
+      $this->db->where('id_peminjaman', $id_peminjaman);
+      $this->db->update('peminjaman', $data);
+      return $this->db->affected_rows();
+    }
     function tampilkan_data_sepeda($id_peminjaman)
     {
         $this->db->select('*');
         $this->db->from('peminjaman');
         $this->db->where('id_peminjaman', $id_peminjaman);
+
         $query=$this->db->get(); 
         return $query->result_array();
     }

@@ -55,7 +55,7 @@
               <!-- general form elements -->
              <div class="box box-primary">
                 <div class="box-header" align="center">
-                  <h3 class="box-title">Data Peminjaman</h3>
+                  <h3 class="box-title">Data Reservasi</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
                 <form id="pinjam" method="post" action="<?php if($mode=='kembali'){ echo base_url().'index.php/petugas/kembali';?>
@@ -124,7 +124,7 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-xs-9"> </div>
+                      <div class="col-xs-9"> <a href="reservasi" class="text-center">Pengguna Sudah Reservasi?</a></div>
                       <div class="col-xs-3">
                         <?php if($mode=='kembali'){ ?><button type="submit" class="btn btn-primary">kembali</button>
                         <?php }else{  ?>  <button type="submit" class="btn btn-primary">Pinjam</button>

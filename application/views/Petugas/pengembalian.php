@@ -11,6 +11,7 @@
               <div id="successMessage"class="alert  alert-dismissible" style="background-color:#FF4545;"role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>Pengembalian Gagal !</strong>Cek kembali id reservasi anda.</div>
             <?php } ?>
+
             <?php if(isset($_GET['status']) && $_GET['status']=='sukses'){ ?>
               <div id="successMessage"class="alert  alert-dismissible" style="background-color:#009933;"role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>Pengembalian berhasil !</strong>Terimakasih telah melakukan peminjaman.</div>
@@ -27,6 +28,7 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Kode Peminjaman / Reservasi</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" name="id_reservasi" placeholder="Masukan Kode Peminjaman / Reservasi Anda" required>
+                      <input type="hidden" value="kembali" name="mode">
                     </div>
 
                    
