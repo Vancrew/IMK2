@@ -137,13 +137,24 @@ class Petugas extends CI_Controller {
 		$this->load->view('template/sidebar');
 		$this->load->view('petugas/pengembalian');
 	}
+	public function tampilkan_data_sepeda()
+	{
+		$id_reservasi=$_POST['id_reservasi'];
+		$id=explode("0", $id_reservasi)[count(explode("0", $id_reservasi))-1];
+		$result=$this->petugas_model->tampilkan_data_sepeda($id);
+		$data['result']=$result;
+		$data['mode']='kembali';
+		$this->load->view('template/header');
+		$this->load->view('template/sidebar');
+		$this->load->view('petugas/tampilkan_data_sepeda',$data);
+	}
 	public function kembali()
 	{
 		if(isset($_POST['id_reservasi']))
 		{
 			$id_reservasi=$_POST['id_reservasi'];
-			$id=explode("0", $id_reservasi)[count(explode("0", $id_reservasi))-1];
-			$retval=$this->petugas_model->kembali_sepeda($id);
+			// $id=explode("0", $id_reservasi)[count(explode("0", $id_reservasi))-1];
+			$retval=$this->petugas_model->kembali_sepeda($id_reservasi);
 			if($retval>0)
 			{
 				redirect('petugas/pengembalian?status=sukses');

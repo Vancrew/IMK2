@@ -73,6 +73,14 @@ class Petugas_model extends CI_Model {
       $this->db->update('peminjaman', $data);
       return $this->db->affected_rows();
     }
+    function tampilkan_data_sepeda($id_peminjaman)
+    {
+        $this->db->select('*');
+        $this->db->from('peminjaman');
+        $this->db->where('id_peminjaman', $id_peminjaman);
+        $query=$this->db->get(); 
+        return $query->result_array();
+    }
     function pinjam_sepeda($id_peminjaman,$noktp,$tanggal_peminjaman,$tanggal_pengembalian,$jml_spd_anak,$jml_spd_standar,$jml_spd_gunung,$jml_spd_tandem,$biaya,$status)
     {
         $data = array(

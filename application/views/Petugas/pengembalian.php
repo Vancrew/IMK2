@@ -21,7 +21,7 @@
                   <h3 class="box-title">Pengembalian Sepeda</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="<?php echo site_url().'/petugas/kembali'; ?>">
+                <form role="form" method="post" action="<?php echo site_url().'/petugas/tampilkan_data_sepeda'; ?>">
                   <div class="box-body">
 
                     <div class="form-group">
