@@ -150,36 +150,33 @@
 	                    <header>
 						<h2>Service Yang Kami Sediakan.</h2>
 						</header>
-						<p>Bagi Peminjam Non member, Kami akan memberi Deposit Rp 100.000/Loot. Adapun kami menyediakan paket peminjaman member dengan ketentuan sebagai berikut :
+						<p>Bagi Peminjam, Diharuskan memberikan jaminan sebesar <strong>3x</strong> dari harga peminjaman. Adapun jaminan anda akan dikurangi dengan ketentuan sebagai berikut :
 	               
 			                <div class="price-table row-fluid">
 			                    <div class="span4 price-column">
-			                        <h3>Platinum</h3>
+			                        <h3>Kerusakan Ringan</h3>
 			                        <ul class="list">
-			                            <li class="price">Jaminan Rp2.000.000</li>
-			                            <li><strong>Fasilitas:</strong></li>
-			                            <li>Jumlah Deposit Peminjaman </li>
-			                            <li><strong>45 Loot</strong></li>
+			                            <li class="price">Jaminan akan dikurangkan </li>
+			                            <li>Sebesar </li>
+			                            <li><strong>1x </strong>harga peminjaman sepeda</li>			                            
 			                        </ul>
 			                        
 			                    </div>
 			                    <div class="span4 price-column">
-			                        <h3>Gold</h3>
+			                        <h3>Kerusakan Ringan</h3>
 			                        <ul class="list">
-			                            <li class="price">Jaminan Rp1.000.000</li>
-			                            <li><strong>Fasilitas:</strong></li>
-			                            <li>Jumlah Deposit Peminjaman </li>
-			                            <li><strong>22 Loot</strong></li>
+			                            <li class="price">Jaminan akan dikurangkan </li>
+			                            <li>Sebesar </li>
+			                            <li><strong>2x </strong>harga peminjaman sepeda</li>			                            
 			                        </ul>
 			                        
 			                    </div>
 			                    <div class="span4 price-column">
-			                        <h3>Blue</h3>
+			                        <h3>Kerusakan Berat</h3>
 			                        <ul class="list">
-			                           <li class="price">Jaminan Rp500.000</li>
-			                            <li><strong>Fasilitas:</strong></li>
-			                            <li>Jumlah Deposit Peminjaman </li>
-			                            <li><strong>10 Loot</strong></li>
+			                            <li class="price">Jaminan akan dikurangkan </li>
+			                            <li>Sebesar </li>
+			                            <li><strong>3x </strong>harga peminjaman sepeda</li>			                            
 			                        </ul>
 			                        
 			                    </div>
