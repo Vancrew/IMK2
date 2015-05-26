@@ -27,7 +27,7 @@
     <div class="collapse" id="Laporan">
    
                 <a class="list-group-item" href="<?php echo site_url('petugas/report_peminjaman');?>">Peminjaman</a>
-                 <a class="list-group-item" href="<?php echo site_url('petugas/gudang_sepeda')?>">Keuangan</a>
+                 
     </div>
 
     <?php } ?>
